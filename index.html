@@ -316,8 +316,9 @@
 
        <header class="header">
     <div class="logo-area">
-        <video autoplay muted loop playsinline style="width:80px;height:80px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);object-fit:cover;">
+       <video autoplay muted loop playsinline style="width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover;">
     <source src="images/logo.mp4" type="video/mp4">
+</video>
 </video>
     </div>
     <div class="title-area">
@@ -355,9 +356,9 @@
             <div class="section-desc">📢 اخبار و پیام‌های مهم را بشنوید و شما هم خبرنگار شوید</div>
             <div class="player-box">
                 <audio id="radioPlayer" controls>
-                   <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
-                   <source src="images/Careless Whisper2.mp3" type="audio/mpeg">
-                </audio>
+    <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
+    <source src="images/Careless Whisper2.mp3" type="audio/mpeg">
+</audio>
             </div>
             <div class="controls">
                 <button class="btn-play" onclick="playRadio()">▶ پخش</button>
@@ -385,8 +386,7 @@
             <div class="section-title"><i class="fas fa-tv"></i> <span class="title-text">تلویزیون کانون</span></div>
             <div class="section-desc">🎬 رویدادها و گزارش‌های تصویری را ببینید و شما هم مجری شوید</div>
             <div class="player-box">
-              <video id="tvPlayer" controls poster="images/logo1.jfif" style="max-width:80%;margin:0 auto;display:block;">
-                    <source src="images/kanoon.mp4" type="video/mp4">
+             <video id="tvPlayer" controls poster="images/logo1.jfif" style="max-width:70%;margin:0 auto;display:block;border-radius:12px;">
                 </video>
             </div>
             <div class="controls">
@@ -663,12 +663,16 @@
         const APP_DATA = {
             radio: {
                 tracks: [
+                     { title: 'آهنگ اول - Careless Whisper', file: 'images/Careless Whisper2.mp3' },
+    { title: 'آهنگ دوم - Ayrilik', file: 'images/Ayrilik_aleftab.ir.mp3' }
                     { title: 'پیام مدیر کانون - فروردین ۱۴۰۵', file: 'images/song1.mp3' },
                     { title: 'آموزش بیمه تکمیلی - قسمت اول', file: 'images/song2.mp3' }
                 ]
             },
             tv: {
                 videos: [
+                    { title: 'ویدئوی کانون', file: 'images/kanoon.mp4' },
+    { title: 'ویدئوی هوش مصنوعی', file: 'images/ert ai.mp4' }
                     { title: 'گزارش مجمع سالیانه ۱۴۰۴', file: 'images/video1.mp4' },
                     { title: 'مستند پیش‌کسوتان - یک عمر تجربه', file: 'images/video2.mp4' }
                 ]
