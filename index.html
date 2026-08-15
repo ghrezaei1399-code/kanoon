@@ -314,19 +314,19 @@
 
     <div class="container">
 
-        <header class="header">
-            <div class="logo-area">
-                <div class="logo-placeholder">📡</div>
-            </div>
-            <div class="title-area">
-                <h1>رادیو تلویزیون <span>هوشمند</span></h1>
-                <p>کانون پیشکسوتان بنیاد</p>
-            </div>
-            <div class="date-area" id="dateDisplay">
-                <div class="date-shamsi" id="dateShamsi">۱۴۰۵/۰۵/۲۰</div>
-                <div class="date-miladi" id="dateMiladi">2026-08-11</div>
-            </div>
-        </header>
+       <header class="header">
+    <div class="logo-area">
+        <div class="logo-placeholder">📡</div>
+    </div>
+    <div class="title-area">
+        <h1>رادیو تلویزیون <span>هوشمند</span></h1>
+        <p>کانون پیشکسوتان بنیاد</p>
+    </div>
+    <div class="date-area" id="dateDisplay">
+        <div class="date-shamsi" id="dateShamsi">۱۴۰۵/۰۵/۲۰</div>
+        <div class="date-miladi" id="dateMiladi">2026-08-11</div>
+    </div>
+</header>
 
         <nav class="menu">
             <a href="#radio">📻 رادیو</a>
@@ -641,11 +641,18 @@
         // ============================================================
         // تاریخ
         // ============================================================
-        function updateDate() {
-            const now = new Date();
-            document.getElementById('dateMiladi').textContent = now.toISOString().split('T')[0];
-            document.getElementById('dateShamsi').textContent = now.toLocaleDateString('fa-IR');
-        }
+      function updateDate() {
+    const now = new Date();
+    document.getElementById('dateMiladi').textContent = now.toISOString().split('T')[0];
+    
+    // تاریخ شمسی با فرمت ۱۴۰۵/۵/۲۳
+    const shamsiDate = now.toLocaleDateString('fa-IR', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric'
+    }).replace(/\//g, '/');
+    document.getElementById('dateShamsi').textContent = shamsiDate;
+}
         updateDate();
         setInterval(updateDate, 60000);
 
