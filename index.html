@@ -15,7 +15,6 @@
         .header::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(253,203,110,0.04) 0%,transparent 70%);animation:glowPulse 8s ease-in-out infinite;pointer-events:none}
         @keyframes glowPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10%,10%) scale(1.1)}}
         .header .logo-area{display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1;min-width:60px}
-        .header .logo-area .logo-placeholder{width:48px;height:48px;border-radius:50%;border:2px dashed rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:20px}
         .header .title-area{text-align:center;flex:1;position:relative;z-index:1}
         .header .title-area h1{font-size:24px;font-weight:900;letter-spacing:-0.5px;background:linear-gradient(135deg,#fff,#fdcb6e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .header .title-area h1 span{background:linear-gradient(135deg,#fdcb6e,#a29bfe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -216,7 +215,6 @@
         .contact-box .contact-row a:hover{color:#fff;text-decoration:underline}
         .contact-box .contact-row .value{color:#fff}
         
-        /* آمار */
         .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
         .stat-card{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;text-align:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
         .stat-card:hover{transform:translateY(-4px);border-color:#00b894;box-shadow:0 8px 30px rgba(0,184,148,0.08)}
@@ -224,7 +222,6 @@
         .stat-card .stat-label{font-size:13px;color:#7f8c8d;font-weight:500}
         .stat-card .stat-icon{font-size:24px;display:block;margin-bottom:4px}
         
-        /* پنل مدیریت */
         .admin-login{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 0}
         .admin-login input{padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;flex:1;min-width:150px}
         .admin-login button{padding:8px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:all 0.3s ease;font-size:12px}
@@ -314,23 +311,24 @@
 
     <div class="container">
 
-       <header class="header">
-    <div class="logo-area">
-       <video autoplay muted loop playsinline style="width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover;">
-    <source src="images/logo.mp4" type="video/mp4">
-</video>
-</video>
-    </div>
-    <div class="title-area">
-        <h1>رادیو تلویزیون <span>هوشمند</span></h1>
-        <p>کانون پیشکسوتان بنیاد</p>
-    </div>
-    <div class="date-area" id="dateDisplay">
-        <div class="date-shamsi" id="dateShamsi">۱۴۰۵/۰۵/۲۰</div>
-        <div class="date-miladi" id="dateMiladi">2026-08-11</div>
-    </div>
-</header>
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="logo-area">
+                <video autoplay muted loop playsinline style="width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover;">
+                    <source src="images/logo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="title-area">
+                <h1>رادیو تلویزیون <span>هوشمند</span></h1>
+                <p>کانون پیشکسوتان بنیاد</p>
+            </div>
+            <div class="date-area" id="dateDisplay">
+                <div class="date-shamsi" id="dateShamsi">۱۴۰۵/۰۵/۲۰</div>
+                <div class="date-miladi" id="dateMiladi">2026-08-11</div>
+            </div>
+        </header>
 
+        <!-- ===== MENU ===== -->
         <nav class="menu">
             <a href="#radio">📻 رادیو</a>
             <a href="#tv">📺 تلویزیون</a>
@@ -349,14 +347,15 @@
             <a href="#contact-section">📞 تماس</a>
             <a href="#footer-mini">💎 طراحی</a>
         </nav>
-<!-- ===== رادیو ===== -->
+
+        <!-- ===== رادیو ===== -->
         <div class="section" id="radio">
             <div class="section-title"><i class="fas fa-radio"></i> <span class="title-text">رادیو کانون</span></div>
             <div class="section-desc">📢 اخبار و پیام‌های مهم را بشنوید و شما هم خبرنگار شوید</div>
             <div class="player-box">
                 <audio id="radioPlayer" controls>
-                    <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
                     <source src="images/Careless Whisper2.mp3" type="audio/mpeg">
+                    <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
                 </audio>
             </div>
             <div class="controls">
@@ -379,7 +378,8 @@
                 </div>
             </div>
         </div>
-       <!-- ===== تلویزیون ===== -->
+
+        <!-- ===== تلویزیون ===== -->
         <div class="section" id="tv">
             <div class="section-title"><i class="fas fa-tv"></i> <span class="title-text">تلویزیون کانون</span></div>
             <div class="section-desc">🎬 رویدادها و گزارش‌های تصویری را ببینید و شما هم مجری شوید</div>
@@ -387,34 +387,6 @@
                 <video id="tvPlayer" controls poster="images/logo1.jfif" style="max-width:70%;border-radius:12px;display:inline-block;">
                     <source src="images/kanoon.mp4" type="video/mp4">
                     <source src="images/ert ai.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="controls">
-                <button class="btn-play" onclick="playTv()">▶ پخش</button>
-                <button class="btn-stop" onclick="pauseTv()">⏹ توقف</button>
-                <button class="btn-next" onclick="nextTv()">⏭ بعدی</button>
-                <button class="btn-prev" onclick="prevTv()">⏮ قبلی</button>
-            </div>
-            <div id="tvPlaylist"></div>
-            <div style="margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.06);">
-                <div style="font-weight:700;color:#2d1b4e;margin-bottom:4px;font-size:13px;">🎬 مجری شو</div>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;">
-                    <input type="text" id="commentTv" placeholder="متن گزارش یا برنامه..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
-                    <button onclick="sendTvMessage('video')" style="padding:6px 14px;font-size:11px;background:#fd79a8;border:none;border-radius:6px;color:#fff;cursor:pointer;">🎥 ویدئو</button>
-                    <button onclick="sendTvMessage('animation')" style="padding:6px 14px;font-size:11px;background:#55efc4;border:none;border-radius:6px;color:#2d1b4e;cursor:pointer;">🎞️ انیمیشن</button>
-                </div>
-                <div id="tvResponses" class="response-box">
-                    <div class="response-item"><span class="type-icon">م</span> <span>به تلویزیون کانون خوش آمدید. شما هم مجری شوید!</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== تلویزیون ===== -->
-        <div class="section" id="tv">
-            <div class="section-title"><i class="fas fa-tv"></i> <span class="title-text">تلویزیون کانون</span></div>
-            <div class="section-desc">🎬 رویدادها و گزارش‌های تصویری را ببینید و شما هم مجری شوید</div>
-            <div class="player-box">
-             <video id="tvPlayer" controls poster="images/logo1.jfif" style="max-width:70%;margin:0 auto;display:block;border-radius:12px;">
                 </video>
             </div>
             <div class="controls">
@@ -571,7 +543,7 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-icon">👤</span>
-                    <span class="stat-number" id="statGuest">3</span>
+                    <span class="stat-number" id="statGuest">0</span>
                     <span class="stat-label">میهمان</span>
                 </div>
                 <div class="stat-card">
@@ -581,17 +553,17 @@
                 </div>
                 <div class="stat-card">
                     <span class="stat-icon">📅</span>
-                    <span class="stat-number" id="statToday">29</span>
+                    <span class="stat-number" id="statToday">0</span>
                     <span class="stat-label">امروز</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-icon">📆</span>
-                    <span class="stat-number" id="statYesterday">27</span>
+                    <span class="stat-number" id="statYesterday">0</span>
                     <span class="stat-label">دیروز</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-icon">📊</span>
-                    <span class="stat-number" id="statTotal">212,152</span>
+                    <span class="stat-number" id="statTotal">0</span>
                     <span class="stat-label">کل مراجعات</span>
                 </div>
             </div>
@@ -611,18 +583,18 @@
             <div class="admin-panel-content" id="adminContent">
                 <h4 style="color:#e17055;margin-bottom:10px;">📊 آمار کامل سیستم</h4>
                 <div class="admin-stats-grid" id="adminStatsGrid">
-                    <div class="admin-stat-item"><span class="label">👤 میهمانان</span><span class="value" id="adminGuest">3</span></div>
+                    <div class="admin-stat-item"><span class="label">👤 میهمانان</span><span class="value" id="adminGuest">0</span></div>
                     <div class="admin-stat-item"><span class="label">👥 اعضا</span><span class="value" id="adminMember">0</span></div>
-                    <div class="admin-stat-item"><span class="label">📅 بازدید امروز</span><span class="value" id="adminToday">29</span></div>
-                    <div class="admin-stat-item"><span class="label">📆 بازدید دیروز</span><span class="value" id="adminYesterday">27</span></div>
-                    <div class="admin-stat-item"><span class="label">📊 کل بازدیدها</span><span class="value" id="adminTotal">212,152</span></div>
-                    <div class="admin-stat-item"><span class="label">📻 بازدید از رادیو</span><span class="value" id="adminRadio">1,245</span></div>
-                    <div class="admin-stat-item"><span class="label">📺 بازدید از تلویزیون</span><span class="value" id="adminTv">987</span></div>
-                    <div class="admin-stat-item"><span class="label">🧠 بازدید از گنجینه</span><span class="value" id="adminMemory">543</span></div>
-                    <div class="admin-stat-item"><span class="label">🤝 بازدید از مشارکت</span><span class="value" id="adminCoop">876</span></div>
-                    <div class="admin-stat-item"><span class="label">📢 بازدید از اعلانات</span><span class="value" id="adminAnnounce">654</span></div>
-                    <div class="admin-stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value" id="adminRegistrations">42</span></div>
-                    <div class="admin-stat-item"><span class="label">💬 پیام‌های ارسالی</span><span class="value" id="adminMessages">28</span></div>
+                    <div class="admin-stat-item"><span class="label">📅 بازدید امروز</span><span class="value" id="adminToday">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📆 بازدید دیروز</span><span class="value" id="adminYesterday">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📊 کل بازدیدها</span><span class="value" id="adminTotal">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📻 بازدید از رادیو</span><span class="value" id="adminRadio">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📺 بازدید از تلویزیون</span><span class="value" id="adminTv">0</span></div>
+                    <div class="admin-stat-item"><span class="label">🧠 بازدید از گنجینه</span><span class="value" id="adminMemory">0</span></div>
+                    <div class="admin-stat-item"><span class="label">🤝 بازدید از مشارکت</span><span class="value" id="adminCoop">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📢 بازدید از اعلانات</span><span class="value" id="adminAnnounce">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value" id="adminRegistrations">0</span></div>
+                    <div class="admin-stat-item"><span class="label">💬 پیام‌های ارسالی</span><span class="value" id="adminMessages">0</span></div>
                 </div>
                 
                 <div class="admin-actions">
@@ -650,20 +622,21 @@
             </div>
         </div>
 
-        <div class="footer-mini" id="footer-mini" style="background:#39FF14;padding:12px;border-radius:14px;margin-top:15px;text-align:center;color:#1a1a2e;border:2px solid #1a1a2e;max-width:380px;margin-left:auto;margin-right:auto;transition:all 0.3s ease;">
-    <strong>طراحی و توسعه</strong>
-    <div class="designer">غلامرضا رضائی</div>
-    <div class="role">طراح و توسعه‌دهنده سکوی همراه هوشمند</div>
-    
-    <!-- پوسترها -->
-    <div style="display:flex;gap:8px;justify-content:center;margin:8px 0;flex-wrap:wrap;">
-        <img src="images/english.jpg" alt="پوستر انگلیسی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
-        <img src="images/poster.jpg" alt="پوستر نهایی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
-    </div>
-    
-    <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
-</div>
+        <!-- ===== طراحی و توسعه ===== -->
+        <div class="footer-mini" id="footer-mini">
+            <strong>طراحی و توسعه</strong>
+            <div class="designer">غلامرضا رضائی</div>
+            <div class="role">طراح و توسعه‌دهنده سکوی همراه هوشمند</div>
+            <div style="display:flex;gap:8px;justify-content:center;margin:8px 0;flex-wrap:wrap;">
+                <img src="images/english.jpg" alt="پوستر انگلیسی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
+                <img src="images/poster.jpg" alt="پوستر نهایی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
+            </div>
+            <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
+        </div>
 
+    </div>
+
+    <!-- ===== دکمه‌های شناور ===== -->
     <div class="floating-toolbar">
         <button id="themeToggle" title="شب/روز"><i class="fas fa-moon"></i><span class="tooltip">شب/روز</span></button>
         <button id="scrollTop" title="بالا"><i class="fas fa-arrow-up"></i><span class="tooltip">بالا</span></button>
@@ -675,18 +648,16 @@
         // ============================================================
         // تاریخ
         // ============================================================
-      function updateDate() {
-    const now = new Date();
-    document.getElementById('dateMiladi').textContent = now.toISOString().split('T')[0];
-    
-    // تاریخ شمسی با فرمت ۱۴۰۵/۵/۲۳
-    const shamsiDate = now.toLocaleDateString('fa-IR', {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
-    }).replace(/\//g, '/');
-    document.getElementById('dateShamsi').textContent = shamsiDate;
-}
+        function updateDate() {
+            const now = new Date();
+            document.getElementById('dateMiladi').textContent = now.toISOString().split('T')[0];
+            const shamsiDate = now.toLocaleDateString('fa-IR', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            }).replace(/\//g, '/');
+            document.getElementById('dateShamsi').textContent = shamsiDate;
+        }
         updateDate();
         setInterval(updateDate, 60000);
 
@@ -696,18 +667,14 @@
         const APP_DATA = {
             radio: {
                 tracks: [
-                     { title: 'آهنگ اول - Careless Whisper', file: 'images/Careless Whisper2.mp3' },
-    { title: 'آهنگ دوم - Ayrilik', file: 'images/Ayrilik_aleftab.ir.mp3' }
-                    { title: 'پیام مدیر کانون - فروردین ۱۴۰۵', file: 'images/song1.mp3' },
-                    { title: 'آموزش بیمه تکمیلی - قسمت اول', file: 'images/song2.mp3' }
+                    { title: 'آهنگ اول - Careless Whisper', file: 'images/Careless Whisper2.mp3' },
+                    { title: 'آهنگ دوم - Ayrilik', file: 'images/Ayrilik_aleftab.ir.mp3' }
                 ]
             },
             tv: {
                 videos: [
                     { title: 'ویدئوی کانون', file: 'images/kanoon.mp4' },
-    { title: 'ویدئوی هوش مصنوعی', file: 'images/ert ai.mp4' }
-                    { title: 'گزارش مجمع سالیانه ۱۴۰۴', file: 'images/video1.mp4' },
-                    { title: 'مستند پیش‌کسوتان - یک عمر تجربه', file: 'images/video2.mp4' }
+                    { title: 'ویدئوی هوش مصنوعی', file: 'images/ert ai.mp4' }
                 ]
             }
         };
@@ -953,7 +920,6 @@
         }
 
         function updateAdminStats() {
-            // خواندن مقادیر از بخش آمار
             const guest = document.getElementById('statGuest').textContent;
             const member = document.getElementById('statMember').textContent;
             const today = document.getElementById('statToday').textContent;
@@ -966,14 +932,13 @@
             document.getElementById('adminYesterday').textContent = yesterday;
             document.getElementById('adminTotal').textContent = total;
             
-            // آمار بخش‌ها (مقادیر نمونه)
-            document.getElementById('adminRadio').textContent = Math.floor(Math.random() * 500 + 1000);
-            document.getElementById('adminTv').textContent = Math.floor(Math.random() * 500 + 800);
-            document.getElementById('adminMemory').textContent = Math.floor(Math.random() * 300 + 400);
-            document.getElementById('adminCoop').textContent = Math.floor(Math.random() * 400 + 600);
-            document.getElementById('adminAnnounce').textContent = Math.floor(Math.random() * 300 + 500);
-            document.getElementById('adminRegistrations').textContent = Math.floor(Math.random() * 30 + 20);
-            document.getElementById('adminMessages').textContent = Math.floor(Math.random() * 20 + 15);
+            document.getElementById('adminRadio').textContent = '0';
+            document.getElementById('adminTv').textContent = '0';
+            document.getElementById('adminMemory').textContent = '0';
+            document.getElementById('adminCoop').textContent = '0';
+            document.getElementById('adminAnnounce').textContent = '0';
+            document.getElementById('adminRegistrations').textContent = '0';
+            document.getElementById('adminMessages').textContent = '0';
             
             document.getElementById('adminLastUpdate').textContent = new Date().toLocaleString('fa-IR');
         }
@@ -1044,42 +1009,42 @@
                         .stat-item .value { float: left; font-weight: 900; color: #6C5CE7; }
                         .footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #eee; text-align: center; font-size: 12px; color: #999; }
                         .title { font-size: 18px; color: #e17055; }
-    </style>
-</head>
-<body>
-    <h1>📊 گزارش آمار کانون پیشکسوتان</h1>
-    <p>📅 تاریخ: ${data.تاریخ} | 🕐 ساعت: ${data.ساعت}</p>
-    
-    <h3>📈 آمار کلی</h3>
-    <div class="stat-grid">
-        <div class="stat-item"><span class="label">👤 میهمان</span><span class="value">${data.میهمان}</span></div>
-        <div class="stat-item"><span class="label">👥 عضو</span><span class="value">${data.عضو}</span></div>
-        <div class="stat-item"><span class="label">📅 بازدید امروز</span><span class="value">${data.بازدید_امروز}</span></div>
-        <div class="stat-item"><span class="label">📆 بازدید دیروز</span><span class="value">${data.بازدید_دیروز}</span></div>
-        <div class="stat-item"><span class="label">📊 کل بازدیدها</span><span class="value">${data.کل_بازدیدها}</span></div>
-    </div>
-    
-    <h3>📊 آمار بخش‌ها</h3>
-    <div class="stat-grid">
-        <div class="stat-item"><span class="label">📻 رادیو</span><span class="value">${data.بازدید_رادیو}</span></div>
-        <div class="stat-item"><span class="label">📺 تلویزیون</span><span class="value">${data.بازدید_تلویزیون}</span></div>
-        <div class="stat-item"><span class="label">🧠 گنجینه</span><span class="value">${data.بازدید_گنجینه}</span></div>
-        <div class="stat-item"><span class="label">🤝 مشارکت</span><span class="value">${data.بازدید_مشارکت}</span></div>
-        <div class="stat-item"><span class="label">📢 اعلانات</span><span class="value">${data.بازدید_اعلانات}</span></div>
-    </div>
-    
-    <h3>📝 آمار عملیاتی</h3>
-    <div class="stat-grid">
-        <div class="stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value">${data.تعداد_ثبت‌نام‌ها}</span></div>
-        <div class="stat-item"><span class="label">💬 پیام‌های ارسال‌شده</span><span class="value">${data.پیام‌های_ارسال‌شده}</span></div>
-    </div>
-    
-    <div class="footer">
-        کانون پیشکسوتان بنیاد شهید<br>
-        www.kanoonbonyad.ir
-    </div>
-</body>
-</html>`;
+                    </style>
+                </head>
+                <body>
+                    <h1>📊 گزارش آمار کانون پیشکسوتان</h1>
+                    <p>📅 تاریخ: ${data.تاریخ} | 🕐 ساعت: ${data.ساعت}</p>
+                    
+                    <h3>📈 آمار کلی</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item"><span class="label">👤 میهمان</span><span class="value">${data.میهمان}</span></div>
+                        <div class="stat-item"><span class="label">👥 عضو</span><span class="value">${data.عضو}</span></div>
+                        <div class="stat-item"><span class="label">📅 بازدید امروز</span><span class="value">${data.بازدید_امروز}</span></div>
+                        <div class="stat-item"><span class="label">📆 بازدید دیروز</span><span class="value">${data.بازدید_دیروز}</span></div>
+                        <div class="stat-item"><span class="label">📊 کل بازدیدها</span><span class="value">${data.کل_بازدیدها}</span></div>
+                    </div>
+                    
+                    <h3>📊 آمار بخش‌ها</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item"><span class="label">📻 رادیو</span><span class="value">${data.بازدید_رادیو}</span></div>
+                        <div class="stat-item"><span class="label">📺 تلویزیون</span><span class="value">${data.بازدید_تلویزیون}</span></div>
+                        <div class="stat-item"><span class="label">🧠 گنجینه</span><span class="value">${data.بازدید_گنجینه}</span></div>
+                        <div class="stat-item"><span class="label">🤝 مشارکت</span><span class="value">${data.بازدید_مشارکت}</span></div>
+                        <div class="stat-item"><span class="label">📢 اعلانات</span><span class="value">${data.بازدید_اعلانات}</span></div>
+                    </div>
+                    
+                    <h3>📝 آمار عملیاتی</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value">${data.تعداد_ثبت‌نام‌ها}</span></div>
+                        <div class="stat-item"><span class="label">💬 پیام‌های ارسال‌شده</span><span class="value">${data.پیام‌های_ارسال‌شده}</span></div>
+                    </div>
+                    
+                    <div class="footer">
+                        کانون پیشکسوتان بنیاد شهید<br>
+                        www.kanoonbonyad.ir
+                    </div>
+                </body>
+                </html>`;
             
             const win = window.open('', '_blank');
             win.document.write(html);
@@ -1115,7 +1080,8 @@
         // ============================================================
         // دکمه‌های شناور
         // ============================================================
-        document.getElementById('themeToggle').addEventListener('click', function() {
+        document.getElementById('themeToggle').addEventListener('click', function(e) {
+            e.preventDefault();
             document.body.classList.toggle('dark-mode');
             const icon = this.querySelector('i');
             if (icon) {
@@ -1124,17 +1090,20 @@
             }
         });
 
-        document.getElementById('scrollTop').addEventListener('click', function() {
+        document.getElementById('scrollTop').addEventListener('click', function(e) {
+            e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        document.getElementById('scrollBottom').addEventListener('click', function() {
+        document.getElementById('scrollBottom').addEventListener('click', function(e) {
+            e.preventDefault();
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         });
 
         let fontSizeLevel = 0;
         const fontSizes = ['14px', '16px', '18px', '20px', '22px'];
-        document.getElementById('fontSizeBtn').addEventListener('click', function() {
+        document.getElementById('fontSizeBtn').addEventListener('click', function(e) {
+            e.preventDefault();
             fontSizeLevel = (fontSizeLevel + 1) % fontSizes.length;
             document.body.style.fontSize = fontSizes[fontSizeLevel];
         });
