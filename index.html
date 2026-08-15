@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>رادیو تلویزیون هوشمند | کانون پیشکسوتان بنیاد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Vazirmatn','Tahoma',Arial,sans-serif;background:#f0f2f5;color:#2d1b4e;padding:15px;direction:rtl;min-height:100vh}
+        .container{max-width:1200px;margin:0 auto;background:#fff;border-radius:28px;padding:25px;box-shadow:0 20px 60px rgba(0,0,0,0.04)}
+        
+        .header{background:linear-gradient(135deg,#1a1a2e,#2d1b4e,#4a2c7a);border-radius:24px;padding:15px 25px;margin-bottom:20px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:relative;overflow:hidden}
+        .header::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(253,203,110,0.04) 0%,transparent 70%);animation:glowPulse 8s ease-in-out infinite;pointer-events:none}
+        @keyframes glowPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10%,10%) scale(1.1)}}
+        .header .logo-area{display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1;min-width:60px}
+        .header .logo-area .logo-placeholder{width:48px;height:48px;border-radius:50%;border:2px dashed rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:20px}
+        .header .title-area{text-align:center;flex:1;position:relative;z-index:1}
+        .header .title-area h1{font-size:24px;font-weight:900;letter-spacing:-0.5px;background:linear-gradient(135deg,#fff,#fdcb6e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .header .title-area h1 span{background:linear-gradient(135deg,#fdcb6e,#a29bfe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .header .title-area p{font-size:13px;opacity:0.7;font-weight:300}
+        .header .date-area{font-size:11px;background:rgba(255,255,255,0.06);padding:4px 14px;border-radius:30px;border:1px solid rgba(255,255,255,0.04);flex-shrink:0;position:relative;z-index:1;text-align:center;min-width:130px}
+        .header .date-area .date-shamsi{font-weight:700;color:#fdcb6e;font-size:13px}
+        .header .date-area .date-miladi{font-size:9px;opacity:0.5}
+        
+        .menu{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;background:#fff;padding:10px 16px;border-radius:60px;margin-bottom:22px;border:2px solid #d4a373;box-shadow:0 4px 20px rgba(0,0,0,0.02)}
+        .menu a{padding:6px 16px;border-radius:50px;color:#fff;text-decoration:none;font-weight:700;font-size:12px;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);border:1px solid transparent;display:inline-flex;align-items:center;gap:4px}
+        .menu a:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 6px 25px rgba(0,0,0,0.08)}
+        .menu a:nth-child(1){background:#4a90d9}
+        .menu a:nth-child(2){background:#6C5CE7}
+        .menu a:nth-child(3){background:#fdcb6e;color:#2d1b4e}
+        .menu a:nth-child(4){background:#55efc4;color:#2d1b4e}
+        .menu a:nth-child(5){background:#4a90d9}
+        .menu a:nth-child(6){background:#6C5CE7}
+        .menu a:nth-child(7){background:#fdcb6e;color:#2d1b4e}
+        .menu a:nth-child(8){background:#55efc4;color:#2d1b4e}
+        .menu a:nth-child(9){background:#4a90d9}
+        .menu a:nth-child(10){background:#6C5CE7}
+        .menu a:nth-child(11){background:#fdcb6e;color:#2d1b4e}
+        .menu a:nth-child(12){background:#55efc4;color:#2d1b4e}
+        .menu a:nth-child(13){background:#4a90d9}
+        .menu a:nth-child(14){background:#6C5CE7}
+        .menu a:nth-child(15){background:#fdcb6e;color:#2d1b4e}
+        .menu a:nth-child(16){background:#e17055}
+        .menu a:nth-child(17){background:#4a90d9}
+        
+        .section{background:#ffffff;border-radius:20px;padding:20px;margin-bottom:20px;border:3px solid #e8e0d8;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 4px 16px rgba(0,0,0,0.02)}
+        .section:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.06)}
+        
+        #radio{background:#e8f4fd;border-color:#4a90d9}
+        #tv{background:#f0ecff;border-color:#6C5CE7}
+        #memory{background:#fef9e7;border-color:#fdcb6e}
+        #coop{background:#e8f8f5;border-color:#55efc4}
+        #participate{background:#fde8f0;border-color:#fd79a8}
+        #campaign{background:#fde8e0;border-color:#e17055}
+        #social{background:#fef9e7;border-color:#f39c12}
+        #insurance{background:#eaf2f8;border-color:#4a90d9}
+        #coop-sales{background:#e8f8f5;border-color:#00b894}
+        #emergency{background:#fdedec;border-color:#e17055}
+        #track{background:#e8f8f5;border-color:#00b894}
+        #announce{background:#fef9e7;border-color:#fdcb6e}
+        #contact-section{background:#f0ecff;border-color:#6C5CE7}
+        #stats-section{background:#e8f8f5;border-color:#00b894}
+        #admin-panel{background:#fde8e0;border-color:#e17055}
+        
+        .section-title{font-size:18px;font-weight:800;margin-bottom:12px;padding-bottom:10px;border-bottom:3px solid;display:flex;align-items:center;gap:10px}
+        .section-title i{font-size:20px}
+        .section-title .title-text{font-weight:900}
+        
+        #radio .section-title{border-color:#4a90d9;color:#2e86c1}
+        #radio .section-title i{color:#4a90d9}
+        #radio .section-title .title-text{color:#2e86c1}
+        #radio .section-desc{color:#4a90d9;border-color:#4a90d9}
+        
+        #tv .section-title{border-color:#6C5CE7;color:#6C5CE7}
+        #tv .section-title i{color:#6C5CE7}
+        #tv .section-title .title-text{color:#6C5CE7}
+        #tv .section-desc{color:#6C5CE7;border-color:#6C5CE7}
+        
+        #memory .section-title{border-color:#fdcb6e;color:#e67e22}
+        #memory .section-title i{color:#fdcb6e}
+        #memory .section-title .title-text{color:#e67e22}
+        #memory .section-desc{color:#e67e22;border-color:#fdcb6e}
+        
+        #coop .section-title{border-color:#55efc4;color:#00b894}
+        #coop .section-title i{color:#55efc4}
+        #coop .section-title .title-text{color:#00b894}
+        #coop .section-desc{color:#00b894;border-color:#55efc4}
+        
+        #participate .section-title{border-color:#fd79a8;color:#e17055}
+        #participate .section-title i{color:#fd79a8}
+        #participate .section-title .title-text{color:#e17055}
+        #participate .section-desc{color:#e17055;border-color:#fd79a8}
+        
+        #campaign .section-title{border-color:#e17055;color:#c0392b}
+        #campaign .section-title i{color:#e17055}
+        #campaign .section-title .title-text{color:#c0392b}
+        #campaign .section-desc{color:#c0392b;border-color:#e17055}
+        
+        #social .section-title{border-color:#fdcb6e;color:#f39c12}
+        #social .section-title i{color:#fdcb6e}
+        #social .section-title .title-text{color:#f39c12}
+        #social .section-desc{color:#f39c12;border-color:#fdcb6e}
+        
+        #insurance .section-title{border-color:#4a90d9;color:#2e86c1}
+        #insurance .section-title i{color:#4a90d9}
+        #insurance .section-title .title-text{color:#2e86c1}
+        #insurance .section-desc{color:#2e86c1;border-color:#4a90d9}
+        
+        #coop-sales .section-title{border-color:#00b894;color:#00b894}
+        #coop-sales .section-title i{color:#00b894}
+        #coop-sales .section-title .title-text{color:#00b894}
+        #coop-sales .section-desc{color:#00b894;border-color:#00b894}
+        
+        #emergency .section-title{border-color:#e17055;color:#c0392b}
+        #emergency .section-title i{color:#e17055}
+        #emergency .section-title .title-text{color:#c0392b}
+        #emergency .section-desc{color:#c0392b;border-color:#e17055}
+        
+        #track .section-title{border-color:#00b894;color:#00b894}
+        #track .section-title i{color:#00b894}
+        #track .section-title .title-text{color:#00b894}
+        #track .section-desc{color:#00b894;border-color:#00b894}
+        
+        #announce .section-title{border-color:#fdcb6e;color:#e67e22}
+        #announce .section-title i{color:#fdcb6e}
+        #announce .section-title .title-text{color:#e67e22}
+        #announce .section-desc{color:#e67e22;border-color:#fdcb6e}
+        
+        #contact-section .section-title{border-color:#6C5CE7;color:#6C5CE7}
+        #contact-section .section-title i{color:#6C5CE7}
+        #contact-section .section-title .title-text{color:#6C5CE7}
+        
+        #stats-section .section-title{border-color:#00b894;color:#00b894}
+        #stats-section .section-title i{color:#00b894}
+        #stats-section .section-title .title-text{color:#00b894}
+        
+        #admin-panel .section-title{border-color:#e17055;color:#c0392b}
+        #admin-panel .section-title i{color:#e17055}
+        #admin-panel .section-title .title-text{color:#c0392b}
+        
+        .section-desc{font-size:13px;margin-bottom:14px;padding-right:12px;border-right:3px solid;font-weight:500;padding:8px 12px;background:rgba(255,255,255,0.3);border-radius:8px}
+        
+        .player-box{background:rgba(255,255,255,0.7);border-radius:14px;padding:12px;margin:8px 0;border:1px solid rgba(0,0,0,0.04)}
+        .player-box audio, .player-box video{width:100%;border-radius:8px}
+        .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+        .controls button{padding:6px 16px;border:none;border-radius:50px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);font-size:12px;display:inline-flex;align-items:center;gap:4px}
+        .controls button:hover{transform:scale(1.06) translateY(-2px)}
+        .btn-play{background:linear-gradient(135deg,#55efc4,#00b894);color:#2d1b4e}
+        .btn-stop{background:linear-gradient(135deg,#fd79a8,#e17055)}
+        .btn-next{background:linear-gradient(135deg,#6C5CE7,#a29bfe)}
+        .btn-prev{background:linear-gradient(135deg,#fdcb6e,#f39c12);color:#2d1b4e}
+        .playlist-item{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;margin:4px 0;border:1px solid rgba(0,0,0,0.04);cursor:pointer;transition:all 0.3s ease}
+        .playlist-item:hover{background:rgba(255,255,255,0.9);transform:scale(1.02);border-color:#6C5CE7}
+        .playlist-item.active{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff;border-color:#6C5CE7;transform:scale(1.02)}
+        
+        .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+        .card{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;text-align:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 2px 8px rgba(0,0,0,0.02)}
+        .card:hover{transform:translateY(-6px) scale(1.02);border-color:#6C5CE7;box-shadow:0 12px 40px rgba(108,92,231,0.08)}
+        .card .icon{font-size:30px;display:block;margin-bottom:6px;transition:all 0.3s}
+        .card:hover .icon{transform:scale(1.1) rotate(-3deg)}
+        .card h4{font-size:15px;font-weight:700;color:#2d1b4e}
+        .card p{font-size:12px;margin:4px 0 8px;line-height:1.6;color:#7f8c8d}
+        .card .btn{display:inline-block;padding:4px 16px;color:#fff;border-radius:50px;text-decoration:none;font-size:11px;font-weight:700;transition:all 0.3s ease;border:none;cursor:pointer}
+        .card .btn:hover{transform:scale(1.04) translateY(-2px)}
+        
+        .card:nth-child(1){border-color:#4a90d9}.card:nth-child(1) .icon{color:#4a90d9}.card:nth-child(1) .btn{background:#4a90d9}
+        .card:nth-child(2){border-color:#6C5CE7}.card:nth-child(2) .icon{color:#6C5CE7}.card:nth-child(2) .btn{background:#6C5CE7}
+        .card:nth-child(3){border-color:#fdcb6e}.card:nth-child(3) .icon{color:#f39c12}.card:nth-child(3) .btn{background:#fdcb6e;color:#2d1b4e}
+        .card:nth-child(4){border-color:#55efc4}.card:nth-child(4) .icon{color:#00b894}.card:nth-child(4) .btn{background:#55efc4;color:#2d1b4e}
+        .card:nth-child(5){border-color:#fd79a8}.card:nth-child(5) .icon{color:#e17055}.card:nth-child(5) .btn{background:#fd79a8}
+        .card:nth-child(6){border-color:#e17055}.card:nth-child(6) .icon{color:#c0392b}.card:nth-child(6) .btn{background:#e17055}
+        
+        .social-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+        .social-item{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;display:flex;flex-direction:column;gap:6px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+        .social-item:hover{transform:translateY(-4px);border-color:#6C5CE7;box-shadow:0 12px 40px rgba(108,92,231,0.08)}
+        .social-item:nth-child(1){border-color:#4a90d9}.social-item:nth-child(1) .title{color:#2e86c1}
+        .social-item:nth-child(2){border-color:#55efc4}.social-item:nth-child(2) .title{color:#00b894}
+        .social-item:nth-child(3){border-color:#fdcb6e}.social-item:nth-child(3) .title{color:#e67e22}
+        .social-item:nth-child(4){border-color:#fd79a8}.social-item:nth-child(4) .title{color:#e17055}
+        .social-item:nth-child(5){border-color:#6C5CE7}.social-item:nth-child(5) .title{color:#6C5CE7}
+        .social-item:nth-child(6){border-color:#e17055}.social-item:nth-child(6) .title{color:#c0392b}
+        .social-item .title{font-weight:700;font-size:14px}
+        .social-item .desc{font-size:12px;color:#7f8c8d;line-height:1.6}
+        .social-item .btn{display:inline-block;padding:4px 16px;color:#fff;border-radius:50px;text-decoration:none;font-size:11px;font-weight:700;align-self:flex-start;border:none;cursor:pointer;transition:all 0.3s ease}
+        .social-item .btn:hover{transform:scale(1.04) translateY(-2px)}
+        .social-item:nth-child(1) .btn{background:#4a90d9}
+        .social-item:nth-child(2) .btn{background:#55efc4;color:#2d1b4e}
+        .social-item:nth-child(3) .btn{background:#fdcb6e;color:#2d1b4e}
+        .social-item:nth-child(4) .btn{background:#fd79a8}
+        .social-item:nth-child(5) .btn{background:#6C5CE7}
+        .social-item:nth-child(6) .btn{background:#e17055}
+        
+        .knowledge-item{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;margin:4px 0;border:1px solid rgba(0,0,0,0.04);transition:all 0.3s ease}
+        .knowledge-item:hover{background:rgba(255,255,255,0.9);border-color:#fdcb6e}
+        
+        .response-box{padding:6px 0;border-radius:8px;max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+        .response-item{display:flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(255,255,255,0.6);border-radius:8px;border-right:3px solid #4a90d9;font-size:12px;transition:all 0.3s ease}
+        .response-item:hover{background:rgba(255,255,255,0.9)}
+        .response-item .type-icon{display:inline-block;width:24px;height:24px;border-radius:50%;background:#4a90d9;color:#fff;text-align:center;line-height:24px;font-size:11px;font-weight:700;flex-shrink:0}
+        
+        .notice-board{display:flex;flex-direction:column;gap:6px;padding:6px 0}
+        .notice-item{display:flex;align-items:center;gap:12px;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;border:1px solid rgba(0,0,0,0.04);transition:all 0.3s ease}
+        .notice-item:hover{background:rgba(255,255,255,0.9);border-color:#fdcb6e}
+        .notice-item .date{font-size:10px;color:#7f8c8d;margin-top:2px}
+        
+        .contact-box{background:linear-gradient(135deg,#2d1b4e,#4a2c7a);border-radius:16px;padding:18px 22px;color:#fff;transition:all 0.4s ease;border:2px solid rgba(255,255,255,0.05)}
+        .contact-box:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(45,27,78,0.08)}
+        .contact-box h3{font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px;color:#fff}
+        .contact-box h3 i{color:#fdcb6e}
+        .contact-box .contact-row{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:8px;align-items:center;color:#fff}
+        .contact-box .contact-row:last-child{border-bottom:none}
+        .contact-box .contact-row .label{font-weight:700;opacity:0.6;min-width:70px;color:#fff}
+        .contact-box .contact-row a{color:#fdcb6e;text-decoration:none;transition:all 0.3s}
+        .contact-box .contact-row a:hover{color:#fff;text-decoration:underline}
+        .contact-box .contact-row .value{color:#fff}
+        
+        /* آمار */
+        .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+        .stat-card{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;text-align:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+        .stat-card:hover{transform:translateY(-4px);border-color:#00b894;box-shadow:0 8px 30px rgba(0,184,148,0.08)}
+        .stat-card .stat-number{font-size:28px;font-weight:900;color:#00b894;display:block;margin:4px 0}
+        .stat-card .stat-label{font-size:13px;color:#7f8c8d;font-weight:500}
+        .stat-card .stat-icon{font-size:24px;display:block;margin-bottom:4px}
+        
+        /* پنل مدیریت */
+        .admin-login{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 0}
+        .admin-login input{padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;flex:1;min-width:150px}
+        .admin-login button{padding:8px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:all 0.3s ease;font-size:12px}
+        .admin-login button:hover{transform:scale(1.04)}
+        .admin-panel-content{display:none;margin-top:15px;padding-top:15px;border-top:2px dashed #e17055}
+        .admin-panel-content.active{display:block}
+        .admin-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+        .admin-stat-item{background:rgba(255,255,255,0.6);border-radius:10px;padding:12px 16px;border:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+        .admin-stat-item .label{font-weight:700;color:#2d1b4e;font-size:13px}
+        .admin-stat-item .value{font-size:16px;font-weight:900;color:#e17055}
+        .admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+        .admin-actions button{padding:6px 16px;border:none;border-radius:6px;font-weight:700;cursor:pointer;transition:all 0.3s ease;font-size:11px}
+        .admin-actions button:hover{transform:scale(1.04)}
+        .btn-email{background:#4a90d9;color:#fff}
+        .btn-print{background:#6C5CE7;color:#fff}
+        .btn-export{background:#00b894;color:#fff}
+        
+        .floating-toolbar{position:fixed;bottom:25px;right:25px;display:flex;flex-direction:column;gap:8px;z-index:999}
+        .floating-toolbar button{width:44px;height:44px;border:none;border-radius:50%;font-size:1rem;cursor:pointer;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+        .floating-toolbar button:hover{transform:scale(1.08)}
+        .floating-toolbar button .tooltip{display:none;position:absolute;left:54px;background:#2d1b4e;color:#fff;padding:3px 12px;border-radius:8px;font-size:0.6rem;white-space:nowrap}
+        .floating-toolbar button:hover .tooltip{display:block}
+        #themeToggle{background:linear-gradient(135deg,#fdcb6e,#f39c12);color:#2d1b4e}
+        #scrollTop{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
+        #scrollBottom{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
+        #fontSizeBtn{background:linear-gradient(135deg,#4a90d9,#74b9ff);color:#fff}
+        
+        .footer-mini{background:#39FF14;padding:12px;border-radius:14px;margin-top:15px;text-align:center;color:#1a1a2e;border:2px solid #1a1a2e;max-width:380px;margin-left:auto;margin-right:auto;transition:all 0.3s ease}
+        .footer-mini:hover{transform:scale(1.02)}
+        .footer-mini strong{font-size:14px}
+        .footer-mini .designer{font-size:16px;font-weight:700;margin:2px 0}
+        .footer-mini .role{font-size:11px;opacity:0.7}
+        .footer-mini .copyright{font-size:9px;border-top:1px solid rgba(26,26,46,0.08);padding-top:4px;margin-top:4px}
+        
+        body.dark-mode{background:#0f0c29;color:#e0e0e0}
+        body.dark-mode .container{background:#1a1a2e}
+        body.dark-mode .header{background:linear-gradient(135deg,#0f0c29,#1a1a2e,#2d1b4e)}
+        body.dark-mode .menu{background:#1a1a2e;border-color:#0f3460}
+        body.dark-mode .menu a{background:#0f3460;color:#e0e0e0}
+        
+        body.dark-mode #radio{background:#1a2a4a;border-color:#4a90d9}
+        body.dark-mode #tv{background:#2a1a4a;border-color:#6C5CE7}
+        body.dark-mode #memory{background:#3a2a1a;border-color:#fdcb6e}
+        body.dark-mode #coop{background:#1a3a2a;border-color:#55efc4}
+        body.dark-mode #participate{background:#3a1a2a;border-color:#fd79a8}
+        body.dark-mode #campaign{background:#3a1a1a;border-color:#e17055}
+        body.dark-mode #social{background:#3a2a1a;border-color:#f39c12}
+        body.dark-mode #insurance{background:#1a2a4a;border-color:#4a90d9}
+        body.dark-mode #coop-sales{background:#1a3a2a;border-color:#00b894}
+        body.dark-mode #emergency{background:#3a1a1a;border-color:#e17055}
+        body.dark-mode #track{background:#1a3a2a;border-color:#00b894}
+        body.dark-mode #announce{background:#3a2a1a;border-color:#fdcb6e}
+        body.dark-mode #contact-section{background:#2a1a4a;border-color:#6C5CE7}
+        body.dark-mode #stats-section{background:#1a3a2a;border-color:#00b894}
+        body.dark-mode #admin-panel{background:#3a1a1a;border-color:#e17055}
+        
+        body.dark-mode .card{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
+        body.dark-mode .card h4{color:#e0e0e0}
+        body.dark-mode .card p{color:#b0b0b0}
+        body.dark-mode .social-item{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
+        body.dark-mode .social-item .title{color:#e0e0e0}
+        body.dark-mode .social-item .desc{color:#b0b0b0}
+        body.dark-mode .playlist-item{background:#1a1a2e;color:#e0e0e0;border-color:#0f3460}
+        body.dark-mode .playlist-item.active{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
+        body.dark-mode .floating-toolbar button{background:#1a1a2e;color:#e0e0e0}
+        body.dark-mode .footer-mini{background:#00b894;color:#fff;border-color:#00b894}
+        body.dark-mode .card .btn{color:#fff}
+        body.dark-mode .social-item .btn{color:#fff}
+        body.dark-mode .section-desc{color:#b0b0b0}
+        body.dark-mode .notice-item{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
+        body.dark-mode .knowledge-item{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
+        body.dark-mode .response-item{background:#1a1a2e;color:#e0e0e0}
+        body.dark-mode .player-box{background:rgba(26,26,46,0.7)}
+        body.dark-mode .section-title .title-text{color:#a29bfe}
+        body.dark-mode .stat-card{background:#1a1a2e;border-color:#0f3460}
+        body.dark-mode .stat-card .stat-number{color:#55efc4}
+        body.dark-mode .stat-card .stat-label{color:#b0b0b0}
+        body.dark-mode .admin-stat-item{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
+        body.dark-mode .admin-stat-item .label{color:#e0e0e0}
+        
+        @media(max-width:992px){.container{padding:16px}}
+        @media(max-width:768px){body{padding:10px}.container{padding:12px;border-radius:20px}.header{flex-direction:column;text-align:center;padding:16px 14px}.header .title-area h1{font-size:20px}.header .date-area{width:100%;text-align:center;padding:6px 10px}.menu{padding:8px 12px;gap:4px;border-radius:40px}.menu a{padding:4px 10px;font-size:10px}.section{padding:14px;border-radius:16px}.section-title{font-size:16px}.card-grid,.social-grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}.card .icon{font-size:26px}.floating-toolbar{bottom:15px;right:15px}.floating-toolbar button{width:38px;height:38px;font-size:0.8rem}}
+        @media(max-width:480px){body{padding:6px}.container{padding:8px;border-radius:16px}.header .title-area h1{font-size:16px}.header .logo-area .logo-placeholder{width:38px;height:38px;font-size:16px}.menu a{padding:3px 7px;font-size:9px}.section{padding:10px;border-radius:14px;margin-bottom:14px}.section-title{font-size:14px}.card-grid,.social-grid{grid-template-columns:1fr;gap:8px}.card{padding:12px}.card .icon{font-size:22px}.controls button{padding:4px 10px;font-size:10px}.floating-toolbar{bottom:12px;right:12px}.floating-toolbar button{width:34px;height:34px;font-size:0.7rem}}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-placeholder">📡</div>
+            </div>
+            <div class="title-area">
+                <h1>رادیو تلویزیون <span>هوشمند</span></h1>
+                <p>کانون پیشکسوتان بنیاد</p>
+            </div>
+            <div class="date-area" id="dateDisplay">
+                <div class="date-shamsi" id="dateShamsi">۱۴۰۵/۰۵/۲۰</div>
+                <div class="date-miladi" id="dateMiladi">2026-08-11</div>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <a href="#radio">📻 رادیو</a>
+            <a href="#tv">📺 تلویزیون</a>
+            <a href="#memory">🧠 گنجینه</a>
+            <a href="#coop">🤝 مشارکت</a>
+            <a href="#participate">🙋 داوطلبانه</a>
+            <a href="#campaign">📢 پویش‌ها</a>
+            <a href="#social">🤝 همیاری</a>
+            <a href="#insurance">🛡️ بیمه</a>
+            <a href="#coop-sales">🏢 تعاون</a>
+            <a href="#emergency">🚑 امداد</a>
+            <a href="#track">🔍 پیگیری</a>
+            <a href="#announce">📢 اعلانات</a>
+            <a href="#stats-section">📊 آمار</a>
+            <a href="#admin-panel">🔐 مدیریت</a>
+            <a href="#contact-section">📞 تماس</a>
+            <a href="#footer-mini">💎 طراحی</a>
+        </nav>
+
+        <!-- ===== رادیو ===== -->
+        <div class="section" id="radio">
+            <div class="section-title"><i class="fas fa-radio"></i> <span class="title-text">رادیو کانون</span></div>
+            <div class="section-desc">📢 اخبار و پیام‌های مهم را بشنوید و شما هم خبرنگار شوید</div>
+            <div class="player-box">
+                <audio id="radioPlayer" controls>
+                    <source src="images/song1.mp3" type="audio/mpeg">
+                    <source src="images/song2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="controls">
+                <button class="btn-play" onclick="playRadio()">▶ پخش</button>
+                <button class="btn-stop" onclick="pauseRadio()">⏹ توقف</button>
+                <button class="btn-next" onclick="nextRadio()">⏭ بعدی</button>
+                <button class="btn-prev" onclick="prevRadio()">⏮ قبلی</button>
+            </div>
+            <div id="radioPlaylist"></div>
+            <div style="margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.06);">
+                <div style="font-weight:700;color:#2d1b4e;margin-bottom:4px;font-size:13px;">🎙️ خبرنگار شو</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                    <input type="text" id="commentRadio" placeholder="متن خبر یا گزارش..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                    <button onclick="sendRadioMessage('text')" style="padding:6px 14px;font-size:11px;background:#4a90d9;border:none;border-radius:6px;color:#fff;cursor:pointer;">📝 متن</button>
+                    <button onclick="sendRadioMessage('audio')" style="padding:6px 14px;font-size:11px;background:#fd79a8;border:none;border-radius:6px;color:#fff;cursor:pointer;">🎤 ویس</button>
+                    <button onclick="sendRadioMessage('podcast')" style="padding:6px 14px;font-size:11px;background:#55efc4;border:none;border-radius:6px;color:#2d1b4e;cursor:pointer;">🎧 پادکست</button>
+                </div>
+                <div id="radioResponses" class="response-box">
+                    <div class="response-item"><span class="type-icon">م</span> <span>به رادیو کانون خوش آمدید. شما هم خبرنگار شوید!</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== تلویزیون ===== -->
+        <div class="section" id="tv">
+            <div class="section-title"><i class="fas fa-tv"></i> <span class="title-text">تلویزیون کانون</span></div>
+            <div class="section-desc">🎬 رویدادها و گزارش‌های تصویری را ببینید و شما هم مجری شوید</div>
+            <div class="player-box">
+                <video id="tvPlayer" controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225'%3E%3Crect width='400' height='225' fill='%236C5CE7'/%3E%3Ctext x='200' y='115' font-family='Vazirmatn' font-size='20' fill='white' text-anchor='middle'%3E📺 تلویزیون کانون%3C/text%3E%3C/svg%3E">
+                    <source src="images/video1.mp4" type="video/mp4">
+                    <source src="images/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="controls">
+                <button class="btn-play" onclick="playTv()">▶ پخش</button>
+                <button class="btn-stop" onclick="pauseTv()">⏹ توقف</button>
+                <button class="btn-next" onclick="nextTv()">⏭ بعدی</button>
+                <button class="btn-prev" onclick="prevTv()">⏮ قبلی</button>
+            </div>
+            <div id="tvPlaylist"></div>
+            <div style="margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.06);">
+                <div style="font-weight:700;color:#2d1b4e;margin-bottom:4px;font-size:13px;">🎬 مجری شو</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                    <input type="text" id="commentTv" placeholder="متن گزارش یا برنامه..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                    <button onclick="sendTvMessage('video')" style="padding:6px 14px;font-size:11px;background:#fd79a8;border:none;border-radius:6px;color:#fff;cursor:pointer;">🎥 ویدئو</button>
+                    <button onclick="sendTvMessage('animation')" style="padding:6px 14px;font-size:11px;background:#55efc4;border:none;border-radius:6px;color:#2d1b4e;cursor:pointer;">🎞️ انیمیشن</button>
+                </div>
+                <div id="tvResponses" class="response-box">
+                    <div class="response-item"><span class="type-icon">م</span> <span>به تلویزیون کانون خوش آمدید. شما هم مجری شوید!</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== گنجینه دانش ===== -->
+        <div class="section" id="memory">
+            <div class="section-title"><i class="fas fa-brain"></i> <span class="title-text">گنجینه دانش</span></div>
+            <div class="section-desc">📚 دانش و تجربه پیش‌کسوتان را ثبت و منتشر کنید</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <input type="text" id="memoryTitle" placeholder="عنوان تجربه..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                <textarea id="memoryDesc" placeholder="توضیحات..." rows="2" style="flex:1;min-width:120px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;"></textarea>
+                <button onclick="addMemory()" style="padding:6px 18px;font-size:12px;background:#fdcb6e;border:none;border-radius:6px;color:#2d1b4e;font-weight:700;cursor:pointer;">📝 ثبت</button>
+            </div>
+            <div id="memoryList" style="margin-top:8px;">
+                <div class="knowledge-item"><span>📖 تجربه مدیریت بحران در سال ۱۳۹۰</span><span style="font-size:10px;color:#7f8c8d;">۱۴۰۵/۰۵/۱۰</span></div>
+                <div class="knowledge-item"><span>📖 راهکارهای کاهش هزینه‌های درمانی</span><span style="font-size:10px;color:#7f8c8d;">۱۴۰۵/۰۵/۰۵</span></div>
+            </div>
+        </div>
+
+        <!-- ===== مشارکت و همکاری ===== -->
+        <div class="section" id="coop">
+            <div class="section-title"><i class="fas fa-handshake"></i> <span class="title-text">مشارکت و همکاری</span></div>
+            <div class="section-desc">🏛️ همکاری با بنیاد شهید، صندوق بازنشستگی و سایر سازمان‌ها</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">🕌</span><h4>تورهای زیارتی</h4><p>اعزام به مشهد، کربلا، نجف</p><button class="btn" onclick="showForm('تور زیارتی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="showForm('تور تفریحی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="showForm('امکانات رفاهی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="showForm('گردشگری سلامت')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏛️</span><h4>بنیاد شهید</h4><p>اطلاع‌رسانی خدمات</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="showForm('صندوق بازنشستگی')">استعلام</button></div>
+            </div>
+        </div>
+
+        <!-- ===== داوطلبانه‌ها ===== -->
+        <div class="section" id="participate">
+            <div class="section-title"><i class="fas fa-user-plus"></i> <span class="title-text">داوطلبانه‌ها</span></div>
+            <div class="section-desc">🙋 به عنوان مربی، مشاور، ناظر یا پژوهشگر ثبت‌نام کنید</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">👨‍🏫</span><h4>مربی</h4><p>آموزش به نسل جوان</p><button class="btn" onclick="showForm('مربی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🧑‍💼</span><h4>مشاور</h4><p>مشاوره تخصصی</p><button class="btn" onclick="showForm('مشاور')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">👁️</span><h4>ناظر</h4><p>نظارت بر فرآیندها</p><button class="btn" onclick="showForm('ناظر')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🔬</span><h4>پژوهشگر</h4><p>تحلیل داده‌ها</p><button class="btn" onclick="showForm('پژوهشگر')">ثبت‌نام</button></div>
+            </div>
+        </div>
+
+        <!-- ===== پویش‌ها ===== -->
+        <div class="section" id="campaign">
+            <div class="section-title"><i class="fas fa-flag"></i> <span class="title-text">پویش‌ها و مطالبه‌گری</span></div>
+            <div class="section-desc">📢 در پویش‌های اجتماعی و حقوقی شرکت کنید</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">⚖️</span><h4>مطالبه‌گری حقوقی</h4><p>پیگیری مطالبات معوقه</p><button class="btn" onclick="showForm('مطالبه‌گری حقوقی')">شرکت</button></div>
+                <div class="card"><span class="icon">🌳</span><h4>همیار محیط زیست</h4><p>کاشت درخت، حفظ آب</p><button class="btn" onclick="showForm('همیار محیط زیست')">شرکت</button></div>
+                <div class="card"><span class="icon">❤️</span><h4>همیار سلامت</h4><p>کمک به بیماران</p><button class="btn" onclick="showForm('همیار سلامت')">شرکت</button></div>
+                <div class="card"><span class="icon">📚</span><h4>همیار آموزش</h4><p>آموزش به کودکان محروم</p><button class="btn" onclick="showForm('همیار آموزش')">شرکت</button></div>
+            </div>
+        </div>
+
+        <!-- ===== همیاری‌های اجتماعی ===== -->
+        <div class="section" id="social">
+            <div class="section-title"><i class="fas fa-hands-helping"></i> <span class="title-text">همیاری‌های اجتماعی</span></div>
+            <div class="section-desc">🤝 توانمندسازی پیش‌کسوتان و کمک به همکاران نیازمند</div>
+            <div class="social-grid">
+                <div class="social-item"><span class="title">کارآفرینی پیش‌کسوتان</span><span class="desc">اتصال پیش‌کسوتان دارای مهارت به بازار کار</span><button class="btn" onclick="showForm('کارآفرینی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">صندوق قرض‌الحسنه</span><span class="desc">کمک به پیش‌کسوتان نیازمند برای رفع مشکلات مالی</span><button class="btn" onclick="showForm('صندوق قرض‌الحسنه')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار سلامت</span><span class="desc">مشاوره سلامت توسط پیش‌کسوتان دارای سابقه پزشکی</span><button class="btn" onclick="showForm('همیار سلامت')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار حقوقی</span><span class="desc">کمک حقوقی به پیش‌کسوتان توسط همکاران وکیل</span><button class="btn" onclick="showForm('همیار حقوقی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار روانشناختی</span><span class="desc">مشاوره روانی به پیش‌کسوتان تنها و بیمار</span><button class="btn" onclick="showForm('همیار روانشناختی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار محلی</span><span class="desc">تشکیل گروه‌های محلی برای کمک به پیش‌کسوتان نیازمند</span><button class="btn" onclick="showForm('همیار محلی')">ثبت‌نام</button></div>
+            </div>
+        </div>
+
+        <!-- ===== خدمات بیمه ===== -->
+        <div class="section" id="insurance">
+            <div class="section-title"><i class="fas fa-shield-alt"></i> <span class="title-text">خدمات بیمه</span></div>
+            <div class="section-desc">🛡️ مدیریت بیمه‌های تکمیلی، خودرو، عمر و منزل</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="showForm('بیمه تکمیلی درمان')">مشاهده</button></div>
+                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="showForm('بیمه خودرو')">استعلام</button></div>
+                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="showForm('بیمه عمر و حوادث')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="showForm('بیمه منزل')">مشاهده</button></div>
+            </div>
+        </div>
+
+        <!-- ===== تعاون و فروش ===== -->
+        <div class="section" id="coop-sales">
+            <div class="section-title"><i class="fas fa-store"></i> <span class="title-text">تعاون و فروش</span></div>
+            <div class="section-desc">🏢 تعاونی مسکن، فروشگاه بنیاد و ارزان‌ترین‌ها</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="showForm('تعاونی مسکن')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🛒</span><h4>فروشگاه بنیاد</h4><p>کالاهای اساسی با تخفیف</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="showForm('ارزان‌ترین‌ها')">مشاهده</button></div>
+            </div>
+        </div>
+
+        <!-- ===== هسته‌های امداد ===== -->
+        <div class="section" id="emergency">
+            <div class="section-title"><i class="fas fa-ambulance"></i> <span class="title-text">هسته‌های امداد</span></div>
+            <div class="section-desc">🚑 در بحران‌های طبیعی و اجتماعی داوطلب شوید</div>
+            <div class="card-grid">
+                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="showForm('امداد سیل')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="showForm('امداد زلزله')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="showForm('امداد جنگ')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="showForm('کمک‌های اولیه')">ثبت‌نام</button></div>
+            </div>
+        </div>
+
+        <!-- ===== پیگیری درخواست‌ها ===== -->
+        <div class="section" id="track">
+            <div class="section-title"><i class="fas fa-search"></i> <span class="title-text">پیگیری درخواست‌ها</span></div>
+            <div class="section-desc">🔍 وضعیت درخواست‌ها را با کد ملی یا کد رهگیری ببینید</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <input type="text" id="trackCode" placeholder="کد ملی یا کد رهگیری..." style="flex:1;min-width:120px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                <button onclick="trackRequest()" style="padding:6px 18px;font-size:12px;background:#00b894;border:none;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;">🔍 پیگیری</button>
+            </div>
+            <div id="trackResult" style="margin-top:8px;padding:10px;background:rgba(255,255,255,0.6);border-radius:8px;display:none;font-size:13px;"></div>
+        </div>
+
+        <!-- ===== تابلوی اعلانات ===== -->
+        <div class="section" id="announce">
+            <div class="section-title"><i class="fas fa-bullhorn"></i> <span class="title-text">تابلوی اعلانات</span></div>
+            <div class="section-desc">📢 اطلاعیه‌ها و رویدادهای مهم کانون</div>
+            <div class="notice-board" id="noticeBoard">
+                <div class="notice-item"><span>🔔</span><div><strong>تمدید بیمه تکمیلی</strong><div class="date">۱۴۰۵/۰۵/۲۰</div></div></div>
+                <div class="notice-item"><span>🔔</span><div><strong>ثبت‌نام وام ضروری</strong><div class="date">۱۴۰۵/۰۵/۱۵</div></div></div>
+                <div class="notice-item"><span>🔔</span><div><strong>مجمع عمومی سالیانه</strong><div class="date">۱۴۰۵/۰۶/۰۱</div></div></div>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+                <input type="text" id="noticeInput" placeholder="متن اعلان جدید..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                <button onclick="addNotice()" style="padding:6px 14px;font-size:12px;background:#fdcb6e;border:none;border-radius:6px;color:#2d1b4e;font-weight:700;cursor:pointer;">➕ افزودن</button>
+            </div>
+        </div>
+
+        <!-- ===== آمار مراجعات ===== -->
+        <div class="section" id="stats-section">
+            <div class="section-title"><i class="fas fa-chart-bar"></i> <span class="title-text">آمار مراجعات</span></div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">👤</span>
+                    <span class="stat-number" id="statGuest">3</span>
+                    <span class="stat-label">میهمان</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <span class="stat-number" id="statMember">0</span>
+                    <span class="stat-label">عضو</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📅</span>
+                    <span class="stat-number" id="statToday">29</span>
+                    <span class="stat-label">امروز</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📆</span>
+                    <span class="stat-number" id="statYesterday">27</span>
+                    <span class="stat-label">دیروز</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📊</span>
+                    <span class="stat-number" id="statTotal">212,152</span>
+                    <span class="stat-label">کل مراجعات</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== پنل مدیریت ===== -->
+        <div class="section" id="admin-panel">
+            <div class="section-title"><i class="fas fa-lock"></i> <span class="title-text">داشبورد مدیریت</span></div>
+            <div class="section-desc">🔐 ورود به پنل مدیریت برای مشاهده آمار کامل و خروجی‌گیری</div>
+            
+            <div class="admin-login">
+                <input type="password" id="adminPassword" placeholder="رمز عبور مدیریت را وارد کنید..." style="flex:1;min-width:150px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                <button onclick="adminLogin()" style="padding:8px 20px;background:#e17055;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;">🔑 ورود</button>
+                <button onclick="adminLogout()" style="padding:8px 20px;background:#7f8c8d;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;">🚪 خروج</button>
+            </div>
+            
+            <div class="admin-panel-content" id="adminContent">
+                <h4 style="color:#e17055;margin-bottom:10px;">📊 آمار کامل سیستم</h4>
+                <div class="admin-stats-grid" id="adminStatsGrid">
+                    <div class="admin-stat-item"><span class="label">👤 میهمانان</span><span class="value" id="adminGuest">3</span></div>
+                    <div class="admin-stat-item"><span class="label">👥 اعضا</span><span class="value" id="adminMember">0</span></div>
+                    <div class="admin-stat-item"><span class="label">📅 بازدید امروز</span><span class="value" id="adminToday">29</span></div>
+                    <div class="admin-stat-item"><span class="label">📆 بازدید دیروز</span><span class="value" id="adminYesterday">27</span></div>
+                    <div class="admin-stat-item"><span class="label">📊 کل بازدیدها</span><span class="value" id="adminTotal">212,152</span></div>
+                    <div class="admin-stat-item"><span class="label">📻 بازدید از رادیو</span><span class="value" id="adminRadio">1,245</span></div>
+                    <div class="admin-stat-item"><span class="label">📺 بازدید از تلویزیون</span><span class="value" id="adminTv">987</span></div>
+                    <div class="admin-stat-item"><span class="label">🧠 بازدید از گنجینه</span><span class="value" id="adminMemory">543</span></div>
+                    <div class="admin-stat-item"><span class="label">🤝 بازدید از مشارکت</span><span class="value" id="adminCoop">876</span></div>
+                    <div class="admin-stat-item"><span class="label">📢 بازدید از اعلانات</span><span class="value" id="adminAnnounce">654</span></div>
+                    <div class="admin-stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value" id="adminRegistrations">42</span></div>
+                    <div class="admin-stat-item"><span class="label">💬 پیام‌های ارسالی</span><span class="value" id="adminMessages">28</span></div>
+                </div>
+                
+                <div class="admin-actions">
+                    <button class="btn-email" onclick="sendStatsEmail()"><i class="fas fa-envelope"></i> ارسال ایمیل</button>
+                    <button class="btn-print" onclick="printStats()"><i class="fas fa-print"></i> پرینت</button>
+                    <button class="btn-export" onclick="exportStats()"><i class="fas fa-download"></i> خروجی CSV</button>
+                    <button class="btn-export" onclick="exportStatsJSON()" style="background:#fd79a8;color:#fff;"><i class="fas fa-file-code"></i> خروجی JSON</button>
+                </div>
+                
+                <div style="margin-top:10px;padding:10px;background:rgba(255,255,255,0.4);border-radius:8px;font-size:11px;color:#7f8c8d;">
+                    <i class="fas fa-info-circle"></i> آخرین به‌روزرسانی: <span id="adminLastUpdate">همین لحظه</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== تماس با کانون ===== -->
+        <div class="section" id="contact-section">
+            <div class="section-title"><i class="fas fa-phone"></i> <span class="title-text">تماس با کانون</span></div>
+            <div class="contact-box">
+                <h3><i class="fas fa-phone"></i> ارتباط با کانون پیشکسوتان</h3>
+                <div class="contact-row"><span class="label">📍 آدرس</span><span class="value">تهران - خ طالقانی - ساختمان قدیم بنیاد</span></div>
+                <div class="contact-row"><span class="label">📞 تلفن</span><span class="value">66415529 - 66415669</span></div>
+                <div class="contact-row"><span class="label">📧 ایمیل</span><a href="mailto:info@kanoonbonyad.ir" class="value">info@kanoonbonyad.ir</a></div>
+                <div class="contact-row"><span class="label">🌐 وب</span><a href="https://www.kanoonbonyad.ir" target="_blank" class="value">www.kanoonbonyad.ir</a></div>
+            </div>
+        </div>
+
+        <div class="footer-mini" id="footer-mini">
+            <strong>طراحی و توسعه</strong>
+            <div class="designer">غلامرضا رضائی</div>
+            <div class="role">طراح و توسعه‌دهنده سکوی همراه هوشمند</div>
+            <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
+        </div>
+
+    </div>
+
+    <div class="floating-toolbar">
+        <button id="themeToggle" title="شب/روز"><i class="fas fa-moon"></i><span class="tooltip">شب/روز</span></button>
+        <button id="scrollTop" title="بالا"><i class="fas fa-arrow-up"></i><span class="tooltip">بالا</span></button>
+        <button id="scrollBottom" title="پایین"><i class="fas fa-arrow-down"></i><span class="tooltip">پایین</span></button>
+        <button id="fontSizeBtn" title="فونت"><i class="fas fa-font"></i><span class="tooltip">فونت</span></button>
+    </div>
+
+    <script>
+        // ============================================================
+        // تاریخ
+        // ============================================================
+        function updateDate() {
+            const now = new Date();
+            document.getElementById('dateMiladi').textContent = now.toISOString().split('T')[0];
+            document.getElementById('dateShamsi').textContent = now.toLocaleDateString('fa-IR');
+        }
+        updateDate();
+        setInterval(updateDate, 60000);
+
+        // ============================================================
+        // داده‌ها
+        // ============================================================
+        const APP_DATA = {
+            radio: {
+                tracks: [
+                    { title: 'پیام مدیر کانون - فروردین ۱۴۰۵', file: 'images/song1.mp3' },
+                    { title: 'آموزش بیمه تکمیلی - قسمت اول', file: 'images/song2.mp3' }
+                ]
+            },
+            tv: {
+                videos: [
+                    { title: 'گزارش مجمع سالیانه ۱۴۰۴', file: 'images/video1.mp4' },
+                    { title: 'مستند پیش‌کسوتان - یک عمر تجربه', file: 'images/video2.mp4' }
+                ]
+            }
+        };
+
+        // ============================================================
+        // رادیو
+        // ============================================================
+        let radioIndex = 0;
+        const radioPlayer = document.getElementById('radioPlayer');
+
+        function renderRadioPlaylist() {
+            const container = document.getElementById('radioPlaylist');
+            container.innerHTML = APP_DATA.radio.tracks.map((track, i) => `
+                <div class="playlist-item ${i === radioIndex ? 'active' : ''}" onclick="loadRadioTrack(${i})">
+                    <span>${track.title}</span>
+                    <span>▶</span>
+                </div>
+            `).join('');
+        }
+
+        function loadRadioTrack(index) {
+            radioIndex = index;
+            radioPlayer.src = APP_DATA.radio.tracks[index].file;
+            radioPlayer.load();
+            radioPlayer.play();
+            renderRadioPlaylist();
+        }
+
+        function playRadio() { radioPlayer.play(); }
+        function pauseRadio() { radioPlayer.pause(); }
+        function nextRadio() { const next = (radioIndex + 1) % APP_DATA.radio.tracks.length; loadRadioTrack(next); }
+        function prevRadio() { const prev = (radioIndex - 1 + APP_DATA.radio.tracks.length) % APP_DATA.radio.tracks.length; loadRadioTrack(prev); }
+
+        function sendRadioMessage(type) {
+            const input = document.getElementById('commentRadio');
+            let msg = input.value.trim();
+            if (type === 'audio') msg = '🎤 پیام صوتی ارسال شد';
+            else if (type === 'podcast') msg = '🎧 پادکست ارسال شد';
+            else if (!msg) { alert('لطفاً متن خبر یا گزارش را بنویسید.'); return; }
+            const container = document.getElementById('radioResponses');
+            const div = document.createElement('div');
+            div.className = 'response-item';
+            const icon = type === 'text' ? 'م' : type === 'audio' ? '🎤' : '🎧';
+            div.innerHTML = `<span class="type-icon">${icon}</span> <span>${msg}</span>`;
+            container.prepend(div);
+            input.value = '';
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.className = 'response-item';
+                reply.innerHTML = `<span class="type-icon" style="background:#55efc4;color:#2d1b4e;">🤖</span> <span>✅ خبر شما دریافت شد. پس از بررسی منتشر می‌شود.</span>`;
+                container.prepend(reply);
+            }, 400);
+        }
+
+        // ============================================================
+        // تلویزیون
+        // ============================================================
+        let tvIndex = 0;
+        const tvPlayer = document.getElementById('tvPlayer');
+
+        function renderTvPlaylist() {
+            const container = document.getElementById('tvPlaylist');
+            if (APP_DATA.tv.videos.length === 0) {
+                container.innerHTML = '<div class="playlist-item">📺 ویدئویی برای نمایش وجود ندارد</div>';
+                return;
+            }
+            container.innerHTML = APP_DATA.tv.videos.map((video, i) => `
+                <div class="playlist-item ${i === tvIndex ? 'active' : ''}" onclick="loadTvTrack(${i})">
+                    <span>${video.title}</span>
+                    <span>▶</span>
+                </div>
+            `).join('');
+        }
+
+        function loadTvTrack(index) {
+            if (index >= APP_DATA.tv.videos.length) return;
+            tvIndex = index;
+            tvPlayer.src = APP_DATA.tv.videos[index].file;
+            tvPlayer.load();
+            tvPlayer.play();
+            renderTvPlaylist();
+        }
+
+        function playTv() { 
+            if (tvPlayer.src) {
+                tvPlayer.play(); 
+            } else {
+                loadTvTrack(0);
+            }
+        }
+        function pauseTv() { tvPlayer.pause(); }
+        function nextTv() { 
+            if (APP_DATA.tv.videos.length === 0) return;
+            const next = (tvIndex + 1) % APP_DATA.tv.videos.length; 
+            loadTvTrack(next); 
+        }
+        function prevTv() { 
+            if (APP_DATA.tv.videos.length === 0) return;
+            const prev = (tvIndex - 1 + APP_DATA.tv.videos.length) % APP_DATA.tv.videos.length; 
+            loadTvTrack(prev); 
+        }
+
+        function sendTvMessage(type) {
+            const input = document.getElementById('commentTv');
+            let msg = input.value.trim();
+            if (type === 'video') msg = '🎥 ویدئوی ارسالی';
+            else if (type === 'animation') msg = '🎞️ انیمیشن ارسالی';
+            else if (!msg) { alert('لطفاً متن گزارش یا برنامه را بنویسید.'); return; }
+            const container = document.getElementById('tvResponses');
+            const div = document.createElement('div');
+            div.className = 'response-item';
+            const icon = type === 'video' ? '🎥' : '🎞️';
+            div.innerHTML = `<span class="type-icon">${icon}</span> <span>${msg}</span>`;
+            container.prepend(div);
+            input.value = '';
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.className = 'response-item';
+                reply.innerHTML = `<span class="type-icon" style="background:#55efc4;color:#2d1b4e;">🤖</span> <span>✅ برنامه شما دریافت شد. پس از بررسی پخش می‌شود.</span>`;
+                container.prepend(reply);
+            }, 400);
+        }
+
+        // ============================================================
+        // گنجینه دانش
+        // ============================================================
+        function addMemory() {
+            const title = document.getElementById('memoryTitle').value.trim();
+            const desc = document.getElementById('memoryDesc').value.trim();
+            if (!title || !desc) {
+                alert('لطفاً عنوان و توضیحات را وارد کنید.');
+                return;
+            }
+            const list = document.getElementById('memoryList');
+            const div = document.createElement('div');
+            div.className = 'knowledge-item';
+            div.innerHTML = `<span>📖 ${title}</span><span style="font-size:10px;color:#7f8c8d;">${new Date().toLocaleDateString('fa-IR')}</span>`;
+            list.prepend(div);
+            document.getElementById('memoryTitle').value = '';
+            document.getElementById('memoryDesc').value = '';
+        }
+
+        // ============================================================
+        // تابلوی اعلانات
+        // ============================================================
+        function addNotice() {
+            const input = document.getElementById('noticeInput');
+            const text = input.value.trim();
+            if (!text) return;
+            const board = document.getElementById('noticeBoard');
+            const div = document.createElement('div');
+            div.className = 'notice-item';
+            div.innerHTML = `<span>🔔</span><div><strong>${text}</strong><div class="date">${new Date().toLocaleDateString('fa-IR')}</div></div>`;
+            board.prepend(div);
+            input.value = '';
+        }
+
+        // ============================================================
+        // پیگیری درخواست
+        // ============================================================
+        function trackRequest() {
+            const code = document.getElementById('trackCode').value.trim();
+            const result = document.getElementById('trackResult');
+            if (!code) {
+                result.style.display = 'block';
+                result.innerHTML = '❌ لطفاً کد ملی یا کد رهگیری را وارد کنید.';
+                result.style.background = '#fdebd0';
+                return;
+            }
+            result.style.display = 'block';
+            result.innerHTML = `✅ درخواست شما با کد <strong>${code}</strong> در حال بررسی است.<br>وضعیت: <span style="color:#27ae60;">در حال پیگیری</span>`;
+            result.style.background = '#d5f5e3';
+        }
+
+        // ============================================================
+        // نمایش فرم با پیام اختصاصی
+        // ============================================================
+        function showForm(type) {
+            const code = 'FRM-' + Date.now().toString().slice(-6);
+            
+            const messages = {
+                'تور زیارتی': 'ثبت‌نام تور زیارتی (مشهد، کربلا، نجف)',
+                'تور تفریحی': 'ثبت‌نام تور تفریحی (بازدید از مناطق گردشگری)',
+                'امکانات رفاهی': 'ثبت‌نام استفاده از امکانات رفاهی (استخر، ورزشی، اقامتگاه)',
+                'گردشگری سلامت': 'ثبت‌نام گردشگری سلامت (سفرهای درمانی به آب‌های گرم)',
+                'صندوق بازنشستگی': 'استعلام تسهیلات صندوق بازنشستگی',
+                'مربی': 'ثبت‌نام به عنوان مربی (آموزش به نسل جوان)',
+                'مشاور': 'ثبت‌نام به عنوان مشاور (مشاوره تخصصی)',
+                'ناظر': 'ثبت‌نام به عنوان ناظر (نظارت بر فرآیندها)',
+                'پژوهشگر': 'ثبت‌نام به عنوان پژوهشگر (تحلیل داده‌ها)',
+                'مطالبه‌گری حقوقی': 'شرکت در پویش مطالبه‌گری حقوقی (پیگیری مطالبات معوقه)',
+                'همیار محیط زیست': 'شرکت در پویش همیار محیط زیست (کاشت درخت، حفظ آب)',
+                'همیار سلامت': 'شرکت در پویش همیار سلامت (کمک به بیماران)',
+                'همیار آموزش': 'شرکت در پویش همیار آموزش (آموزش به کودکان محروم)',
+                'کارآفرینی': 'ثبت‌نام در کارآفرینی پیش‌کسوتان (اتصال به بازار کار)',
+                'صندوق قرض‌الحسنه': 'ثبت‌نام در صندوق قرض‌الحسنه (کمک مالی به نیازمندان)',
+                'همیار حقوقی': 'ثبت‌نام به عنوان همیار حقوقی (کمک حقوقی به پیش‌کسوتان)',
+                'همیار روانشناختی': 'ثبت‌نام به عنوان همیار روانشناختی (مشاوره روانی)',
+                'همیار محلی': 'ثبت‌نام به عنوان همیار محلی (تشکیل گروه‌های محلی)',
+                'بیمه تکمیلی درمان': 'مشاهده و تمدید بیمه تکمیلی درمان (پوشش‌های درمانی)',
+                'بیمه خودرو': 'استعلام و تمدید بیمه خودرو (پوشش‌های خودرو)',
+                'بیمه عمر و حوادث': 'مشاهده اطلاعات بیمه عمر و حوادث (پوشش‌های عمری)',
+                'بیمه منزل': 'مشاهده پوشش‌های بیمه منزل (آتش‌سوزی و زلزله)',
+                'تعاونی مسکن': 'دریافت اطلاعات تعاونی مسکن (ثبت‌نام و اطلاع‌رسانی)',
+                'ارزان‌ترین‌ها': 'مشاهده لیست ارزان‌ترین تأمین‌کنندگان (کالاهای اساسی)',
+                'امداد سیل': 'ثبت‌نام در گروه امداد سیل (واکنش به بحران سیل)',
+                'امداد زلزله': 'ثبت‌نام در گروه امداد زلزله (تیم‌های واکنش سریع)',
+                'امداد جنگ': 'دریافت اطلاعات امداد جنگ (هماهنگی در شرایط بحرانی)',
+                'کمک‌های اولیه': 'ثبت‌نام در دوره‌های کمک‌های اولیه (آموزش امداد)'
+            };
+
+            const msg = messages[type] || `ثبت‌نام در "${type}"`;
+            
+            const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
+            if (userEmail && userEmail.includes('@')) {
+                alert(`✅ ثبت‌نام شما در "${type}" با موفقیت انجام شد.\nکد رهگیری: ${code}\nوضعیت: در انتظار بررسی\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
+            } else if (userEmail) {
+                alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
+            }
+        }
+
+        // ============================================================
+        // پنل مدیریت
+        // ============================================================
+        const ADMIN_PASSWORD = 'admin123';
+
+        function adminLogin() {
+            const password = document.getElementById('adminPassword').value.trim();
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('adminContent').classList.add('active');
+                document.getElementById('adminPassword').value = '';
+                document.getElementById('adminLastUpdate').textContent = new Date().toLocaleString('fa-IR');
+                updateAdminStats();
+                alert('✅ ورود موفق! به داشبورد مدیریت خوش آمدید.');
+            } else {
+                alert('❌ رمز عبور اشتباه است. لطفاً دوباره تلاش کنید.');
+            }
+        }
+
+        function adminLogout() {
+            document.getElementById('adminContent').classList.remove('active');
+            alert('🚪 شما از پنل مدیریت خارج شدید.');
+        }
+
+        function updateAdminStats() {
+            // خواندن مقادیر از بخش آمار
+            const guest = document.getElementById('statGuest').textContent;
+            const member = document.getElementById('statMember').textContent;
+            const today = document.getElementById('statToday').textContent;
+            const yesterday = document.getElementById('statYesterday').textContent;
+            const total = document.getElementById('statTotal').textContent;
+            
+            document.getElementById('adminGuest').textContent = guest;
+            document.getElementById('adminMember').textContent = member;
+            document.getElementById('adminToday').textContent = today;
+            document.getElementById('adminYesterday').textContent = yesterday;
+            document.getElementById('adminTotal').textContent = total;
+            
+            // آمار بخش‌ها (مقادیر نمونه)
+            document.getElementById('adminRadio').textContent = Math.floor(Math.random() * 500 + 1000);
+            document.getElementById('adminTv').textContent = Math.floor(Math.random() * 500 + 800);
+            document.getElementById('adminMemory').textContent = Math.floor(Math.random() * 300 + 400);
+            document.getElementById('adminCoop').textContent = Math.floor(Math.random() * 400 + 600);
+            document.getElementById('adminAnnounce').textContent = Math.floor(Math.random() * 300 + 500);
+            document.getElementById('adminRegistrations').textContent = Math.floor(Math.random() * 30 + 20);
+            document.getElementById('adminMessages').textContent = Math.floor(Math.random() * 20 + 15);
+            
+            document.getElementById('adminLastUpdate').textContent = new Date().toLocaleString('fa-IR');
+        }
+
+        // ============================================================
+        // خروجی‌گیری از آمار
+        // ============================================================
+        function getStatsData() {
+            return {
+                عنوان: 'آمار کامل کانون پیشکسوتان',
+                تاریخ: new Date().toLocaleDateString('fa-IR'),
+                ساعت: new Date().toLocaleTimeString('fa-IR'),
+                میهمان: document.getElementById('adminGuest').textContent,
+                عضو: document.getElementById('adminMember').textContent,
+                بازدید_امروز: document.getElementById('adminToday').textContent,
+                بازدید_دیروز: document.getElementById('adminYesterday').textContent,
+                کل_بازدیدها: document.getElementById('adminTotal').textContent,
+                بازدید_رادیو: document.getElementById('adminRadio').textContent,
+                بازدید_تلویزیون: document.getElementById('adminTv').textContent,
+                بازدید_گنجینه: document.getElementById('adminMemory').textContent,
+                بازدید_مشارکت: document.getElementById('adminCoop').textContent,
+                بازدید_اعلانات: document.getElementById('adminAnnounce').textContent,
+                تعداد_ثبت‌نام‌ها: document.getElementById('adminRegistrations').textContent,
+                پیام‌های_ارسال‌شده: document.getElementById('adminMessages').textContent
+            };
+        }
+
+        function sendStatsEmail() {
+            const data = getStatsData();
+            let body = '📊 گزارش آمار کانون پیشکسوتان\n';
+            body += '═══════════════════════════\n\n';
+            body += `📅 تاریخ: ${data.تاریخ}\n`;
+            body += `🕐 ساعت: ${data.ساعت}\n\n`;
+            body += `👤 میهمان: ${data.میهمان}\n`;
+            body += `👥 عضو: ${data.عضو}\n`;
+            body += `📅 بازدید امروز: ${data.بازدید_امروز}\n`;
+            body += `📆 بازدید دیروز: ${data.بازدید_دیروز}\n`;
+            body += `📊 کل بازدیدها: ${data.کل_بازدیدها}\n\n`;
+            body += '📊 آمار بخش‌ها:\n';
+            body += `📻 رادیو: ${data.بازدید_رادیو}\n`;
+            body += `📺 تلویزیون: ${data.بازدید_تلویزیون}\n`;
+            body += `🧠 گنجینه: ${data.بازدید_گنجینه}\n`;
+            body += `🤝 مشارکت: ${data.بازدید_مشارکت}\n`;
+            body += `📢 اعلانات: ${data.بازدید_اعلانات}\n\n`;
+            body += `📝 تعداد ثبت‌نام‌ها: ${data.تعداد_ثبت‌نام‌ها}\n`;
+            body += `💬 پیام‌های ارسال‌شده: ${data.پیام‌های_ارسال‌شده}\n`;
+            body += '\n═══════════════════════════\n';
+            body += 'کانون پیشکسوتان بنیاد شهید';
+            
+            const subject = encodeURIComponent('📊 گزارش آمار کانون پیشکسوتان');
+            const encodedBody = encodeURIComponent(body);
+            window.location.href = `mailto:info@kanoonbonyad.ir?subject=${subject}&body=${encodedBody}`;
+            
+            alert('📧 ایمیل با اطلاعات آماری باز شد. لطفاً ارسال را تأیید کنید.');
+        }
+
+        function printStats() {
+            const data = getStatsData();
+            let html = `
+                <html>
+                <head>
+                    <style>
+                        body { font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl; padding: 30px; }
+                        h1 { color: #2d1b4e; border-bottom: 3px solid #6C5CE7; padding-bottom: 10px; }
+                        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+                        .stat-item { background: #f5f0ff; padding: 10px 15px; border-radius: 8px; border-right: 4px solid #6C5CE7; }
+                        .stat-item .label { font-weight: 700; color: #2d1b4e; }
+                        .stat-item .value { float: left; font-weight: 900; color: #6C5CE7; }
+                        .footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #eee; text-align: center; font-size: 12px; color: #999; }
+                        .title { font-size: 18px; color: #e17055; }
+    </style>
+</head>
+<body>
+    <h1>📊 گزارش آمار کانون پیشکسوتان</h1>
+    <p>📅 تاریخ: ${data.تاریخ} | 🕐 ساعت: ${data.ساعت}</p>
+    
+    <h3>📈 آمار کلی</h3>
+    <div class="stat-grid">
+        <div class="stat-item"><span class="label">👤 میهمان</span><span class="value">${data.میهمان}</span></div>
+        <div class="stat-item"><span class="label">👥 عضو</span><span class="value">${data.عضو}</span></div>
+        <div class="stat-item"><span class="label">📅 بازدید امروز</span><span class="value">${data.بازدید_امروز}</span></div>
+        <div class="stat-item"><span class="label">📆 بازدید دیروز</span><span class="value">${data.بازدید_دیروز}</span></div>
+        <div class="stat-item"><span class="label">📊 کل بازدیدها</span><span class="value">${data.کل_بازدیدها}</span></div>
+    </div>
+    
+    <h3>📊 آمار بخش‌ها</h3>
+    <div class="stat-grid">
+        <div class="stat-item"><span class="label">📻 رادیو</span><span class="value">${data.بازدید_رادیو}</span></div>
+        <div class="stat-item"><span class="label">📺 تلویزیون</span><span class="value">${data.بازدید_تلویزیون}</span></div>
+        <div class="stat-item"><span class="label">🧠 گنجینه</span><span class="value">${data.بازدید_گنجینه}</span></div>
+        <div class="stat-item"><span class="label">🤝 مشارکت</span><span class="value">${data.بازدید_مشارکت}</span></div>
+        <div class="stat-item"><span class="label">📢 اعلانات</span><span class="value">${data.بازدید_اعلانات}</span></div>
+    </div>
+    
+    <h3>📝 آمار عملیاتی</h3>
+    <div class="stat-grid">
+        <div class="stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value">${data.تعداد_ثبت‌نام‌ها}</span></div>
+        <div class="stat-item"><span class="label">💬 پیام‌های ارسال‌شده</span><span class="value">${data.پیام‌های_ارسال‌شده}</span></div>
+    </div>
+    
+    <div class="footer">
+        کانون پیشکسوتان بنیاد شهید<br>
+        www.kanoonbonyad.ir
+    </div>
+</body>
+</html>`;
+            
+            const win = window.open('', '_blank');
+            win.document.write(html);
+            win.document.close();
+            setTimeout(() => { win.print(); }, 500);
+        }
+
+        function exportStats() {
+            const data = getStatsData();
+            let csv = 'عنوان,مقدار\n';
+            for (let key in data) {
+                csv += `${key},${data[key]}\n`;
+            }
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `آمار_کانون_${new Date().toISOString().slice(0,10)}.csv`;
+            link.click();
+            alert('📥 فایل CSV با موفقیت دانلود شد.');
+        }
+
+        function exportStatsJSON() {
+            const data = getStatsData();
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `آمار_کانون_${new Date().toISOString().slice(0,10)}.json`;
+            link.click();
+            alert('📥 فایل JSON با موفقیت دانلود شد.');
+        }
+
+        // ============================================================
+        // دکمه‌های شناور
+        // ============================================================
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+            }
+        });
+
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('scrollBottom').addEventListener('click', function() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+
+        let fontSizeLevel = 0;
+        const fontSizes = ['14px', '16px', '18px', '20px', '22px'];
+        document.getElementById('fontSizeBtn').addEventListener('click', function() {
+            fontSizeLevel = (fontSizeLevel + 1) % fontSizes.length;
+            document.body.style.fontSize = fontSizes[fontSizeLevel];
+        });
+
+        // ============================================================
+        // مقداردهی اولیه
+        // ============================================================
+        renderRadioPlaylist();
+        renderTvPlaylist();
+        loadRadioTrack(0);
+        if (APP_DATA.tv.videos.length > 0) {
+            loadTvTrack(0);
+        }
+
+        console.log('✅ رادیو تلویزیون هوشمند کانون پیشکسوتان راه‌اندازی شد.');
+    </script>
+
+</body>
+</html>
