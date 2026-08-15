@@ -349,16 +349,15 @@
             <a href="#contact-section">📞 تماس</a>
             <a href="#footer-mini">💎 طراحی</a>
         </nav>
-
-        <!-- ===== رادیو ===== -->
+<!-- ===== رادیو ===== -->
         <div class="section" id="radio">
             <div class="section-title"><i class="fas fa-radio"></i> <span class="title-text">رادیو کانون</span></div>
             <div class="section-desc">📢 اخبار و پیام‌های مهم را بشنوید و شما هم خبرنگار شوید</div>
             <div class="player-box">
                 <audio id="radioPlayer" controls>
-    <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
-    <source src="images/Careless Whisper2.mp3" type="audio/mpeg">
-</audio>
+                    <source src="images/Ayrilik_aleftab.ir.mp3" type="audio/mpeg">
+                    <source src="images/Careless Whisper2.mp3" type="audio/mpeg">
+                </audio>
             </div>
             <div class="controls">
                 <button class="btn-play" onclick="playRadio()">▶ پخش</button>
@@ -377,6 +376,35 @@
                 </div>
                 <div id="radioResponses" class="response-box">
                     <div class="response-item"><span class="type-icon">م</span> <span>به رادیو کانون خوش آمدید. شما هم خبرنگار شوید!</span></div>
+                </div>
+            </div>
+        </div>
+       <!-- ===== تلویزیون ===== -->
+        <div class="section" id="tv">
+            <div class="section-title"><i class="fas fa-tv"></i> <span class="title-text">تلویزیون کانون</span></div>
+            <div class="section-desc">🎬 رویدادها و گزارش‌های تصویری را ببینید و شما هم مجری شوید</div>
+            <div class="player-box" style="text-align:center;">
+                <video id="tvPlayer" controls poster="images/logo1.jfif" style="max-width:70%;border-radius:12px;display:inline-block;">
+                    <source src="images/kanoon.mp4" type="video/mp4">
+                    <source src="images/ert ai.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="controls">
+                <button class="btn-play" onclick="playTv()">▶ پخش</button>
+                <button class="btn-stop" onclick="pauseTv()">⏹ توقف</button>
+                <button class="btn-next" onclick="nextTv()">⏭ بعدی</button>
+                <button class="btn-prev" onclick="prevTv()">⏮ قبلی</button>
+            </div>
+            <div id="tvPlaylist"></div>
+            <div style="margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.06);">
+                <div style="font-weight:700;color:#2d1b4e;margin-bottom:4px;font-size:13px;">🎬 مجری شو</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                    <input type="text" id="commentTv" placeholder="متن گزارش یا برنامه..." style="flex:1;min-width:100px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
+                    <button onclick="sendTvMessage('video')" style="padding:6px 14px;font-size:11px;background:#fd79a8;border:none;border-radius:6px;color:#fff;cursor:pointer;">🎥 ویدئو</button>
+                    <button onclick="sendTvMessage('animation')" style="padding:6px 14px;font-size:11px;background:#55efc4;border:none;border-radius:6px;color:#2d1b4e;cursor:pointer;">🎞️ انیمیشن</button>
+                </div>
+                <div id="tvResponses" class="response-box">
+                    <div class="response-item"><span class="type-icon">م</span> <span>به تلویزیون کانون خوش آمدید. شما هم مجری شوید!</span></div>
                 </div>
             </div>
         </div>
