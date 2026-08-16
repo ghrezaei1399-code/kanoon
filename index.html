@@ -45,7 +45,8 @@
         .menu a:nth-child(16){background:#e17055}
         .menu a:nth-child(17){background:#4a90d9}
         
-        .section{background:#ffffff;border-radius:20px;padding:20px;margin-bottom:20px;border:3px solid #e8e0d8;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 4px 16px rgba(0,0,0,0.02)}
+        .section{background:#ffffff;border-radius:20px;padding:20px;margin-bottom:20px;border:3px solid #e8e0d8;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 4px 16px rgba(0,0,0,0.02);animation:sectionBg 12s ease-in-out infinite alternate}
+        @keyframes sectionBg{0%{border-color:#4a90d9;background:#e8f4fd}25%{border-color:#6C5CE7;background:#f0ecff}50%{border-color:#fdcb6e;background:#fef9e7}75%{border-color:#55efc4;background:#e8f8f5}100%{border-color:#fd79a8;background:#fde8f0}}
         .section:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.06)}
         
         #radio{background:#e8f4fd;border-color:#4a90d9}
@@ -147,23 +148,27 @@
         .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
         .controls button{padding:6px 16px;border:none;border-radius:50px;color:#fff;font-weight:700;cursor:pointer;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);font-size:12px;display:inline-flex;align-items:center;gap:4px}
         .controls button:hover{transform:scale(1.06) translateY(-2px)}
+        .controls button:active{transform:scale(0.94)}
         .btn-play{background:linear-gradient(135deg,#55efc4,#00b894);color:#2d1b4e}
         .btn-stop{background:linear-gradient(135deg,#fd79a8,#e17055)}
         .btn-next{background:linear-gradient(135deg,#6C5CE7,#a29bfe)}
         .btn-prev{background:linear-gradient(135deg,#fdcb6e,#f39c12);color:#2d1b4e}
         .playlist-item{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;margin:4px 0;border:1px solid rgba(0,0,0,0.04);cursor:pointer;transition:all 0.3s ease}
         .playlist-item:hover{background:rgba(255,255,255,0.9);transform:scale(1.02);border-color:#6C5CE7}
+        .playlist-item:active{transform:scale(0.96);background:rgba(108,92,231,0.1)}
         .playlist-item.active{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff;border-color:#6C5CE7;transform:scale(1.02)}
         
         .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
         .card{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;text-align:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 2px 8px rgba(0,0,0,0.02)}
         .card:hover{transform:translateY(-6px) scale(1.02);border-color:#6C5CE7;box-shadow:0 12px 40px rgba(108,92,231,0.08)}
+        .card:active{transform:scale(0.95);border-color:#6C5CE7;box-shadow:0 8px 30px rgba(108,92,231,0.15)}
         .card .icon{font-size:30px;display:block;margin-bottom:6px;transition:all 0.3s}
         .card:hover .icon{transform:scale(1.1) rotate(-3deg)}
         .card h4{font-size:15px;font-weight:700;color:#2d1b4e}
         .card p{font-size:12px;margin:4px 0 8px;line-height:1.6;color:#7f8c8d}
         .card .btn{display:inline-block;padding:4px 16px;color:#fff;border-radius:50px;text-decoration:none;font-size:11px;font-weight:700;transition:all 0.3s ease;border:none;cursor:pointer}
         .card .btn:hover{transform:scale(1.04) translateY(-2px)}
+        .card .btn:active{transform:scale(0.92)}
         
         .card:nth-child(1){border-color:#4a90d9}.card:nth-child(1) .icon{color:#4a90d9}.card:nth-child(1) .btn{background:#4a90d9}
         .card:nth-child(2){border-color:#6C5CE7}.card:nth-child(2) .icon{color:#6C5CE7}.card:nth-child(2) .btn{background:#6C5CE7}
@@ -175,6 +180,7 @@
         .social-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
         .social-item{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;display:flex;flex-direction:column;gap:6px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
         .social-item:hover{transform:translateY(-4px);border-color:#6C5CE7;box-shadow:0 12px 40px rgba(108,92,231,0.08)}
+        .social-item:active{transform:scale(0.95);border-color:#6C5CE7}
         .social-item:nth-child(1){border-color:#4a90d9}.social-item:nth-child(1) .title{color:#2e86c1}
         .social-item:nth-child(2){border-color:#55efc4}.social-item:nth-child(2) .title{color:#00b894}
         .social-item:nth-child(3){border-color:#fdcb6e}.social-item:nth-child(3) .title{color:#e67e22}
@@ -185,6 +191,7 @@
         .social-item .desc{font-size:12px;color:#7f8c8d;line-height:1.6}
         .social-item .btn{display:inline-block;padding:4px 16px;color:#fff;border-radius:50px;text-decoration:none;font-size:11px;font-weight:700;align-self:flex-start;border:none;cursor:pointer;transition:all 0.3s ease}
         .social-item .btn:hover{transform:scale(1.04) translateY(-2px)}
+        .social-item .btn:active{transform:scale(0.92)}
         .social-item:nth-child(1) .btn{background:#4a90d9}
         .social-item:nth-child(2) .btn{background:#55efc4;color:#2d1b4e}
         .social-item:nth-child(3) .btn{background:#fdcb6e;color:#2d1b4e}
@@ -194,19 +201,23 @@
         
         .knowledge-item{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;margin:4px 0;border:1px solid rgba(0,0,0,0.04);transition:all 0.3s ease}
         .knowledge-item:hover{background:rgba(255,255,255,0.9);border-color:#fdcb6e}
+        .knowledge-item:active{transform:scale(0.98)}
         
         .response-box{padding:6px 0;border-radius:8px;max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
         .response-item{display:flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(255,255,255,0.6);border-radius:8px;border-right:3px solid #4a90d9;font-size:12px;transition:all 0.3s ease}
         .response-item:hover{background:rgba(255,255,255,0.9)}
+        .response-item:active{transform:scale(0.98)}
         .response-item .type-icon{display:inline-block;width:24px;height:24px;border-radius:50%;background:#4a90d9;color:#fff;text-align:center;line-height:24px;font-size:11px;font-weight:700;flex-shrink:0}
         
         .notice-board{display:flex;flex-direction:column;gap:6px;padding:6px 0}
         .notice-item{display:flex;align-items:center;gap:12px;padding:8px 14px;background:rgba(255,255,255,0.6);border-radius:10px;border:1px solid rgba(0,0,0,0.04);transition:all 0.3s ease}
         .notice-item:hover{background:rgba(255,255,255,0.9);border-color:#fdcb6e}
+        .notice-item:active{transform:scale(0.98)}
         .notice-item .date{font-size:10px;color:#7f8c8d;margin-top:2px}
         
         .contact-box{background:linear-gradient(135deg,#2d1b4e,#4a2c7a);border-radius:16px;padding:18px 22px;color:#fff;transition:all 0.4s ease;border:2px solid rgba(255,255,255,0.05)}
         .contact-box:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(45,27,78,0.08)}
+        .contact-box:active{transform:scale(0.98)}
         .contact-box h3{font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px;color:#fff}
         .contact-box h3 i{color:#fdcb6e}
         .contact-box .contact-row{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:8px;align-items:center;color:#fff}
@@ -219,6 +230,7 @@
         .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
         .stat-card{background:rgba(255,255,255,0.8);border-radius:14px;padding:16px;border:2px solid #e8e0d8;text-align:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
         .stat-card:hover{transform:translateY(-4px);border-color:#00b894;box-shadow:0 8px 30px rgba(0,184,148,0.08)}
+        .stat-card:active{transform:scale(0.95)}
         .stat-card .stat-number{font-size:28px;font-weight:900;color:#00b894;display:block;margin:4px 0}
         .stat-card .stat-label{font-size:13px;color:#7f8c8d;font-weight:500}
         .stat-card .stat-icon{font-size:24px;display:block;margin-bottom:4px}
@@ -227,15 +239,18 @@
         .admin-login input{padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;flex:1;min-width:150px}
         .admin-login button{padding:8px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:all 0.3s ease;font-size:12px}
         .admin-login button:hover{transform:scale(1.04)}
+        .admin-login button:active{transform:scale(0.94)}
         .admin-panel-content{display:none;margin-top:15px;padding-top:15px;border-top:2px dashed #e17055}
         .admin-panel-content.active{display:block}
         .admin-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
         .admin-stat-item{background:rgba(255,255,255,0.6);border-radius:10px;padding:12px 16px;border:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+        .admin-stat-item:active{transform:scale(0.98)}
         .admin-stat-item .label{font-weight:700;color:#2d1b4e;font-size:13px}
         .admin-stat-item .value{font-size:16px;font-weight:900;color:#e17055}
         .admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
         .admin-actions button{padding:6px 16px;border:none;border-radius:6px;font-weight:700;cursor:pointer;transition:all 0.3s ease;font-size:11px}
         .admin-actions button:hover{transform:scale(1.04)}
+        .admin-actions button:active{transform:scale(0.92)}
         .btn-email{background:#4a90d9;color:#fff}
         .btn-print{background:#6C5CE7;color:#fff}
         .btn-export{background:#00b894;color:#fff}
@@ -243,6 +258,7 @@
         .floating-toolbar{position:fixed;bottom:25px;right:25px;display:flex;flex-direction:column;gap:8px;z-index:999}
         .floating-toolbar button{width:44px;height:44px;border:none;border-radius:50%;font-size:1rem;cursor:pointer;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
         .floating-toolbar button:hover{transform:scale(1.08)}
+        .floating-toolbar button:active{transform:scale(0.85)}
         .floating-toolbar button .tooltip{display:none;position:absolute;left:54px;background:#2d1b4e;color:#fff;padding:3px 12px;border-radius:8px;font-size:0.6rem;white-space:nowrap}
         .floating-toolbar button:hover .tooltip{display:block}
         #themeToggle{background:linear-gradient(135deg,#fdcb6e,#f39c12);color:#2d1b4e}
@@ -252,6 +268,7 @@
         
         .footer-mini{background:#39FF14;padding:12px;border-radius:14px;margin-top:15px;text-align:center;color:#1a1a2e;border:2px solid #1a1a2e;max-width:420px;margin-left:auto;margin-right:auto;transition:all 0.3s ease}
         .footer-mini:hover{transform:scale(1.02)}
+        .footer-mini:active{transform:scale(0.98)}
         .footer-mini strong{font-size:14px}
         .footer-mini .designer{font-size:16px;font-weight:700;margin:2px 0}
         .footer-mini .role{font-size:11px;opacity:0.7}
@@ -261,6 +278,48 @@
         .footer-mini .web-link{font-size:11px;margin-top:4px;font-weight:700;color:#1a1a2e}
         .footer-mini .web-link a{color:#1a1a2e;text-decoration:none}
         .footer-mini .web-link a:hover{text-decoration:underline}
+        
+        /* حذف هاور در دستگاه‌های لمسی */
+        @media (hover: none) {
+            .card:hover { transform: none !important; border-color: #e8e0d8 !important; }
+            .social-item:hover { transform: none !important; border-color: #e8e0d8 !important; }
+            .section:hover { transform: none !important; }
+            .playlist-item:hover { transform: none !important; background: rgba(255,255,255,0.6) !important; }
+            .controls button:hover { transform: none !important; }
+            .card .btn:hover { transform: none !important; }
+            .social-item .btn:hover { transform: none !important; }
+            .contact-box:hover { transform: none !important; }
+            .stat-card:hover { transform: none !important; }
+            .admin-login button:hover { transform: none !important; }
+            .admin-actions button:hover { transform: none !important; }
+            .floating-toolbar button:hover { transform: none !important; }
+            .footer-mini:hover { transform: none !important; }
+            .knowledge-item:hover { background: rgba(255,255,255,0.6) !important; }
+            .notice-item:hover { background: rgba(255,255,255,0.6) !important; }
+            .response-item:hover { background: rgba(255,255,255,0.6) !important; }
+        }
+        
+        /* تقویت افکت‌های لمسی برای موبایل */
+        @media (pointer: coarse) {
+            .card:active { transform: scale(0.95) !important; border-color: #6C5CE7 !important; box-shadow: 0 8px 30px rgba(108,92,231,0.15) !important; }
+            .btn:active { transform: scale(0.92) !important; }
+            .section:active { transform: scale(0.99) !important; }
+            .social-item:active { transform: scale(0.95) !important; border-color: #6C5CE7 !important; }
+            .playlist-item:active { transform: scale(0.96) !important; background: rgba(108,92,231,0.1) !important; }
+            .controls button:active { transform: scale(0.94) !important; }
+            .card .btn:active { transform: scale(0.92) !important; }
+            .social-item .btn:active { transform: scale(0.92) !important; }
+            .floating-toolbar button:active { transform: scale(0.85) !important; }
+            .contact-box:active { transform: scale(0.98) !important; }
+            .stat-card:active { transform: scale(0.95) !important; }
+            .footer-mini:active { transform: scale(0.98) !important; }
+            .notice-item:active { transform: scale(0.98) !important; }
+            .knowledge-item:active { transform: scale(0.98) !important; }
+            .response-item:active { transform: scale(0.98) !important; }
+            .admin-login button:active { transform: scale(0.94) !important; }
+            .admin-actions button:active { transform: scale(0.92) !important; }
+            .admin-stat-item:active { transform: scale(0.98) !important; }
+        }
         
         body.dark-mode{background:#0f0c29;color:#e0e0e0}
         body.dark-mode .container{background:#1a1a2e}
@@ -325,6 +384,7 @@
         .modal-agree-box input[type="checkbox"]{width:18px;height:18px;cursor:pointer}
         .modal-submit{width:100%;padding:12px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer}
         .modal-submit:hover{transform:scale(1.02)}
+        .modal-submit:active{transform:scale(0.96)}
         .modal-submit-register{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
         .modal-submit-campaign{background:linear-gradient(135deg,#55efc4,#00b894);color:#2d1b4e}
         
@@ -459,8 +519,8 @@
                 <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="openRegisterForm('تور تفریحی')">ثبت‌نام</button></div>
                 <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="openRegisterForm('امکانات رفاهی')">ثبت‌نام</button></div>
                 <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="openRegisterForm('گردشگری سلامت')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏛️</span><h4>بنیاد شهید</h4><p>اطلاع‌رسانی خدمات</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">استعلام</button></div>
+                <div class="card"><span class="icon">🏛️</span><h4>بنیاد شهید</h4><p>اطلاع‌رسانی خدمات</p><button class="btn" onclick="window.open('https://www.ghatreh.com/news/tag/37288-%D8%A8%D9%86%DB%8C%D8%A7%D8%AF-%D8%B4%D9%87%DB%8C%D8%AF/0/20','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="window.open('https://www.cspf.ir/','_blank')">استعلام</button></div>
             </div>
         </div>
 
@@ -507,10 +567,10 @@
             <div class="section-title"><i class="fas fa-shield-alt"></i> <span class="title-text">خدمات بیمه</span></div>
             <div class="section-desc">🛡️ مدیریت بیمه‌های تکمیلی، خودرو، عمر و منزل</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">استعلام</button></div>
-                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">اطلاعات</button></div>
-                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="window.open('https://didar24.com/','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="window.open('https://didar24.com/','_blank')">استعلام</button></div>
+                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="window.open('https://didar24.com/','_blank')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="window.open('https://didar24.com/','_blank')">مشاهده</button></div>
             </div>
         </div>
 
@@ -519,9 +579,9 @@
             <div class="section-title"><i class="fas fa-store"></i> <span class="title-text">تعاون و فروش</span></div>
             <div class="section-desc">🏢 تعاونی مسکن، فروشگاه بنیاد و ارزان‌ترین‌ها</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="openRegisterForm('تعاونی مسکن')">اطلاعات</button></div>
-                <div class="card"><span class="icon">🛒</span><h4>فروشگاه بنیاد</h4><p>کالاهای اساسی با تخفیف</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="window.open('http://www.kanoonbonyad.ir/','_blank')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🛒</span><h4>فروشگاه بنیاد</h4><p>کالاهای اساسی با تخفیف</p><button class="btn" onclick="window.open('https://avval.ir/profile/ac2b3/%D8%A8%D9%86%DB%8C%D8%A7%D8%AF-%D8%B4%D9%87%DB%8C%D8%AF-%D9%88-%D8%A7%D9%85%D9%88%D8%B1-%D8%A7%DB%8C%D8%AB%D8%A7%D8%B1%DA%AF%D8%B1%D8%A7%D9%86-%D8%B4%D8%B1%DA%A9%D8%AA-%D8%AA%D8%B9%D8%A7%D9%88%D9%86%DB%8C-%D9%85%D8%B5%D8%B1%D9%81','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="window.open('https://rooziato.com/2025195103/cheap-market-in-tehran/','_blank')">مشاهده</button></div>
             </div>
         </div>
 
@@ -530,9 +590,9 @@
             <div class="section-title"><i class="fas fa-ambulance"></i> <span class="title-text">هسته‌های امداد</span></div>
             <div class="section-desc">🚑 در بحران‌های طبیعی و اجتماعی داوطلب شوید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="openRegisterForm('امداد سیل')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="window.open('https://learn.rcs.ir/course/63466','_blank')">ثبت‌نام</button></div>
                 <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="openRegisterForm('امداد زلزله')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">اطلاعات</button></div>
+                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="window.open('https://paydarymelli.ir/','_blank')">اطلاعات</button></div>
                 <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="openRegisterForm('کمک‌های اولیه')">ثبت‌نام</button></div>
             </div>
         </div>
@@ -620,7 +680,7 @@
                 <div class="contact-row"><span class="label">📍 آدرس</span><span class="value">تهران - خ طالقانی - ساختمان قدیم بنیاد</span></div>
                 <div class="contact-row"><span class="label">📞 تلفن</span><span class="value">66415529 - 66415669</span></div>
                 <div class="contact-row"><span class="label">📧 ایمیل</span><a href="mailto:info@kanoonbonyad.ir" class="value">info@kanoonbonyad.ir</a></div>
-                <div class="contact-row"><span class="label">🌐 وب</span><a href="http://kanoonbonyad.ir" target="_blank" class="value">www.kanoonbonyad.ir</a></div>
+                <div class="contact-row"><span class="label">🌐 وب</span><a href="http://www.kanoonbonyad.ir/" target="_blank" class="value">www.kanoonbonyad.ir</a></div>
             </div>
         </div>
 
@@ -634,7 +694,7 @@
                 <img src="images/poster 1.png" alt="پوستر اول" onerror="this.style.display='none'">
                 <img src="images/پوستر نهایی.png" alt="پوستر نهایی" onerror="this.style.display='none'">
             </div>
-            <div class="web-link">🌐 <a href="http://www.kanoonbonyad.ir" target="_blank">www.kanoonbonyad.ir</a></div>
+            <div class="web-link">🌐 <a href="http://www.kanoonbonyad.ir/" target="_blank">www.kanoonbonyad.ir</a></div>
             <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
         </div>
 
@@ -947,11 +1007,9 @@
                 'همیار حقوقی': 'ثبت‌نام به عنوان همیار حقوقی (کمک حقوقی به پیش‌کسوتان)',
                 'همیار روانشناختی': 'ثبت‌نام به عنوان همیار روانشناختی (مشاوره روانی)',
                 'همیار محلی': 'ثبت‌نام به عنوان همیار محلی (تشکیل گروه‌های محلی)',
-                'تعاونی مسکن': 'دریافت اطلاعات تعاونی مسکن (ثبت‌نام و اطلاع‌رسانی)',
-                'امداد سیل': 'ثبت‌نام در گروه امداد سیل (واکنش به بحران سیل)',
+                'همیار سلامت': 'ثبت‌نام به عنوان همیار سلامت (مشاوره سلامت)',
                 'امداد زلزله': 'ثبت‌نام در گروه امداد زلزله (تیم‌های واکنش سریع)',
-                'کمک‌های اولیه': 'ثبت‌نام در دوره‌های کمک‌های اولیه (آموزش امداد)',
-                'همیار سلامت': 'ثبت‌نام به عنوان همیار سلامت (مشاوره سلامت)'
+                'کمک‌های اولیه': 'ثبت‌نام در دوره‌های کمک‌های اولیه (آموزش امداد)'
             };
             document.getElementById('registerTitle').textContent = titles[type] || `ثبت‌نام در "${type}"`;
             document.getElementById('registerModal').style.display = 'block';
@@ -1213,7 +1271,7 @@
         }
 
         // ============================================================
-        // دکمه‌های شناور
+        // دکمه‌های شناور با بازخورد لمسی
         // ============================================================
         document.getElementById('themeToggle').addEventListener('click', function(e) {
             e.preventDefault();
@@ -1241,6 +1299,16 @@
             e.preventDefault();
             fontSizeLevel = (fontSizeLevel + 1) % fontSizes.length;
             document.body.style.fontSize = fontSizes[fontSizeLevel];
+        });
+
+        // بازخورد لمسی دکمه‌های شناور
+        document.querySelectorAll('.floating-toolbar button').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.85)';
+            });
+            btn.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
         });
 
         // ============================================================
