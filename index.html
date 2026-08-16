@@ -310,9 +310,27 @@
         body.dark-mode .admin-stat-item{background:#1a1a2e;border-color:#0f3460;color:#e0e0e0}
         body.dark-mode .admin-stat-item .label{color:#e0e0e0}
         
+        /* مودال فرم‌ها */
+        .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999;padding:20px;overflow-y:auto;direction:rtl}
+        .modal-box{max-width:500px;margin:40px auto;background:#fff;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+        .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+        .modal-header h2{color:#2d1b4e;font-size:20px}
+        .modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:#e17055}
+        .modal-desc{color:#7f8c8d;font-size:13px;margin-bottom:15px}
+        .modal-label{display:block;font-weight:700;font-size:13px;color:#2d1b4e;margin-bottom:4px}
+        .modal-input{width:100%;padding:10px 14px;border:2px solid #ddd;border-radius:10px;font-size:14px}
+        .modal-input:focus{border-color:#6C5CE7;outline:none}
+        .modal-agree-box{padding:15px;background:#f0ecff;border-radius:10px;border-right:4px solid #6C5CE7;margin-bottom:15px}
+        .modal-agree-box label{display:flex;align-items:center;gap:10px;font-size:13px;color:#2d1b4e;cursor:pointer}
+        .modal-agree-box input[type="checkbox"]{width:18px;height:18px;cursor:pointer}
+        .modal-submit{width:100%;padding:12px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer}
+        .modal-submit:hover{transform:scale(1.02)}
+        .modal-submit-register{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
+        .modal-submit-campaign{background:linear-gradient(135deg,#55efc4,#00b894);color:#2d1b4e}
+        
         @media(max-width:992px){.container{padding:16px}}
-        @media(max-width:768px){body{padding:10px}.container{padding:12px;border-radius:20px}.header{flex-direction:column;text-align:center;padding:16px 14px}.header .title-area h1{font-size:20px}.header .date-area{width:100%;text-align:center;padding:6px 10px}.menu{padding:8px 12px;gap:4px;border-radius:40px}.menu a{padding:4px 10px;font-size:10px}.section{padding:14px;border-radius:16px}.section-title{font-size:16px}.card-grid,.social-grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}.card .icon{font-size:26px}.floating-toolbar{bottom:15px;right:15px}.floating-toolbar button{width:38px;height:38px;font-size:0.8rem}}
-        @media(max-width:480px){body{padding:6px}.container{padding:8px;border-radius:16px}.header .title-area h1{font-size:16px}.header .logo-area video{width:70px;height:70px}.menu a{padding:3px 7px;font-size:9px}.section{padding:10px;border-radius:14px;margin-bottom:14px}.section-title{font-size:14px}.card-grid,.social-grid{grid-template-columns:1fr;gap:8px}.card{padding:12px}.card .icon{font-size:22px}.controls button{padding:4px 10px;font-size:10px}.floating-toolbar{bottom:12px;right:12px}.floating-toolbar button{width:34px;height:34px;font-size:0.7rem}}
+        @media(max-width:768px){body{padding:10px}.container{padding:12px;border-radius:20px}.header{flex-direction:column;text-align:center;padding:16px 14px}.header .title-area h1{font-size:20px}.header .date-area{width:100%;text-align:center;padding:6px 10px}.menu{padding:8px 12px;gap:4px;border-radius:40px}.menu a{padding:4px 10px;font-size:10px}.section{padding:14px;border-radius:16px}.section-title{font-size:16px}.card-grid,.social-grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}.card .icon{font-size:26px}.floating-toolbar{bottom:15px;right:15px}.floating-toolbar button{width:38px;height:38px;font-size:0.8rem}.modal-box{margin:20px auto;padding:20px}}
+        @media(max-width:480px){body{padding:6px}.container{padding:8px;border-radius:16px}.header .title-area h1{font-size:16px}.header .logo-area video{width:70px;height:70px}.menu a{padding:3px 7px;font-size:9px}.section{padding:10px;border-radius:14px;margin-bottom:14px}.section-title{font-size:14px}.card-grid,.social-grid{grid-template-columns:1fr;gap:8px}.card{padding:12px}.card .icon{font-size:22px}.controls button{padding:4px 10px;font-size:10px}.floating-toolbar{bottom:12px;right:12px}.floating-toolbar button{width:34px;height:34px;font-size:0.7rem}.modal-box{margin:10px auto;padding:15px}}
     </style>
 </head>
 <body>
@@ -323,9 +341,7 @@
         <header class="header">
             <div class="logo-area">
                 <video autoplay muted loop playsinline>
-    <source src="images/logo3.mp4" type="video/mp4">
-    </video>
-                browser does not support the video tag.
+                    <source src="images/logo3.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="title-area">
@@ -439,12 +455,12 @@
             <div class="section-title"><i class="fas fa-handshake"></i> <span class="title-text">مشارکت و همکاری</span></div>
             <div class="section-desc">🏛️ همکاری با بنیاد شهید، صندوق بازنشستگی و سایر سازمان‌ها</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🕌</span><h4>تورهای زیارتی</h4><p>اعزام به مشهد، کربلا، نجف</p><button class="btn" onclick="showForm('تور زیارتی', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="showForm('تور تفریحی', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="showForm('امکانات رفاهی', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="showForm('گردشگری سلامت', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🕌</span><h4>تورهای زیارتی</h4><p>اعزام به مشهد، کربلا، نجف</p><button class="btn" onclick="openRegisterForm('تور زیارتی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="openRegisterForm('تور تفریحی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="openRegisterForm('امکانات رفاهی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="openRegisterForm('گردشگری سلامت')">ثبت‌نام</button></div>
                 <div class="card"><span class="icon">🏛️</span><h4>بنیاد شهید</h4><p>اطلاع‌رسانی خدمات</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="showForm('صندوق بازنشستگی', false)">استعلام</button></div>
+                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">استعلام</button></div>
             </div>
         </div>
 
@@ -453,10 +469,10 @@
             <div class="section-title"><i class="fas fa-user-plus"></i> <span class="title-text">داوطلبانه‌ها</span></div>
             <div class="section-desc">🙋 به عنوان مربی، مشاور، ناظر یا پژوهشگر ثبت‌نام کنید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">👨‍🏫</span><h4>مربی</h4><p>آموزش به نسل جوان</p><button class="btn" onclick="showForm('مربی', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🧑‍💼</span><h4>مشاور</h4><p>مشاوره تخصصی</p><button class="btn" onclick="showForm('مشاور', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">👁️</span><h4>ناظر</h4><p>نظارت بر فرآیندها</p><button class="btn" onclick="showForm('ناظر', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🔬</span><h4>پژوهشگر</h4><p>تحلیل داده‌ها</p><button class="btn" onclick="showForm('پژوهشگر', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">👨‍🏫</span><h4>مربی</h4><p>آموزش به نسل جوان</p><button class="btn" onclick="openRegisterForm('مربی')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🧑‍💼</span><h4>مشاور</h4><p>مشاوره تخصصی</p><button class="btn" onclick="openRegisterForm('مشاور')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">👁️</span><h4>ناظر</h4><p>نظارت بر فرآیندها</p><button class="btn" onclick="openRegisterForm('ناظر')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🔬</span><h4>پژوهشگر</h4><p>تحلیل داده‌ها</p><button class="btn" onclick="openRegisterForm('پژوهشگر')">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -465,10 +481,10 @@
             <div class="section-title"><i class="fas fa-flag"></i> <span class="title-text">پویش‌ها و مطالبه‌گری</span></div>
             <div class="section-desc">📢 در پویش‌های اجتماعی و حقوقی شرکت کنید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">⚖️</span><h4>مطالبه‌گری حقوقی</h4><p>پیگیری مطالبات معوقه</p><button class="btn" onclick="showForm('مطالبه‌گری حقوقی', true)">شرکت</button></div>
-                <div class="card"><span class="icon">🌳</span><h4>همیار محیط زیست</h4><p>کاشت درخت، حفظ آب</p><button class="btn" onclick="showForm('همیار محیط زیست', true)">شرکت</button></div>
-                <div class="card"><span class="icon">❤️</span><h4>همیار سلامت</h4><p>کمک به بیماران</p><button class="btn" onclick="showForm('همیار سلامت', true)">شرکت</button></div>
-                <div class="card"><span class="icon">📚</span><h4>همیار آموزش</h4><p>آموزش به کودکان محروم</p><button class="btn" onclick="showForm('همیار آموزش', true)">شرکت</button></div>
+                <div class="card"><span class="icon">⚖️</span><h4>مطالبه‌گری حقوقی</h4><p>پیگیری مطالبات معوقه</p><button class="btn" onclick="openCampaignForm('مطالبه‌گری حقوقی')">شرکت</button></div>
+                <div class="card"><span class="icon">🌳</span><h4>همیار محیط زیست</h4><p>کاشت درخت، حفظ آب</p><button class="btn" onclick="openCampaignForm('همیار محیط زیست')">شرکت</button></div>
+                <div class="card"><span class="icon">❤️</span><h4>همیار سلامت</h4><p>کمک به بیماران</p><button class="btn" onclick="openCampaignForm('همیار سلامت')">شرکت</button></div>
+                <div class="card"><span class="icon">📚</span><h4>همیار آموزش</h4><p>آموزش به کودکان محروم</p><button class="btn" onclick="openCampaignForm('همیار آموزش')">شرکت</button></div>
             </div>
         </div>
 
@@ -477,12 +493,12 @@
             <div class="section-title"><i class="fas fa-hands-helping"></i> <span class="title-text">همیاری‌های اجتماعی</span></div>
             <div class="section-desc">🤝 توانمندسازی پیش‌کسوتان و کمک به همکاران نیازمند</div>
             <div class="social-grid">
-                <div class="social-item"><span class="title">کارآفرینی پیش‌کسوتان</span><span class="desc">اتصال پیش‌کسوتان دارای مهارت به بازار کار</span><button class="btn" onclick="showForm('کارآفرینی', true)">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">صندوق قرض‌الحسنه</span><span class="desc">کمک به پیش‌کسوتان نیازمند برای رفع مشکلات مالی</span><button class="btn" onclick="showForm('صندوق قرض‌الحسنه', true)">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار سلامت</span><span class="desc">مشاوره سلامت توسط پیش‌کسوتان دارای سابقه پزشکی</span><button class="btn" onclick="showForm('همیار سلامت', true)">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار حقوقی</span><span class="desc">کمک حقوقی به پیش‌کسوتان توسط همکاران وکیل</span><button class="btn" onclick="showForm('همیار حقوقی', true)">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار روانشناختی</span><span class="desc">مشاوره روانی به پیش‌کسوتان تنها و بیمار</span><button class="btn" onclick="showForm('همیار روانشناختی', true)">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار محلی</span><span class="desc">تشکیل گروه‌های محلی برای کمک به پیش‌کسوتان نیازمند</span><button class="btn" onclick="showForm('همیار محلی', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">کارآفرینی پیش‌کسوتان</span><span class="desc">اتصال پیش‌کسوتان دارای مهارت به بازار کار</span><button class="btn" onclick="openRegisterForm('کارآفرینی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">صندوق قرض‌الحسنه</span><span class="desc">کمک به پیش‌کسوتان نیازمند برای رفع مشکلات مالی</span><button class="btn" onclick="openRegisterForm('صندوق قرض‌الحسنه')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار سلامت</span><span class="desc">مشاوره سلامت توسط پیش‌کسوتان دارای سابقه پزشکی</span><button class="btn" onclick="openRegisterForm('همیار سلامت')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار حقوقی</span><span class="desc">کمک حقوقی به پیش‌کسوتان توسط همکاران وکیل</span><button class="btn" onclick="openRegisterForm('همیار حقوقی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار روانشناختی</span><span class="desc">مشاوره روانی به پیش‌کسوتان تنها و بیمار</span><button class="btn" onclick="openRegisterForm('همیار روانشناختی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار محلی</span><span class="desc">تشکیل گروه‌های محلی برای کمک به پیش‌کسوتان نیازمند</span><button class="btn" onclick="openRegisterForm('همیار محلی')">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -491,10 +507,10 @@
             <div class="section-title"><i class="fas fa-shield-alt"></i> <span class="title-text">خدمات بیمه</span></div>
             <div class="section-desc">🛡️ مدیریت بیمه‌های تکمیلی، خودرو، عمر و منزل</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="showForm('بیمه تکمیلی درمان', false)">مشاهده</button></div>
-                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="showForm('بیمه خودرو', false)">استعلام</button></div>
-                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="showForm('بیمه عمر و حوادث', false)">اطلاعات</button></div>
-                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="showForm('بیمه منزل', false)">مشاهده</button></div>
+                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
+                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">استعلام</button></div>
+                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
             </div>
         </div>
 
@@ -503,9 +519,9 @@
             <div class="section-title"><i class="fas fa-store"></i> <span class="title-text">تعاون و فروش</span></div>
             <div class="section-desc">🏢 تعاونی مسکن، فروشگاه بنیاد و ارزان‌ترین‌ها</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="showForm('تعاونی مسکن', true)">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="openRegisterForm('تعاونی مسکن')">اطلاعات</button></div>
                 <div class="card"><span class="icon">🛒</span><h4>فروشگاه بنیاد</h4><p>کالاهای اساسی با تخفیف</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="showForm('ارزان‌ترین‌ها', false)">مشاهده</button></div>
+                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
             </div>
         </div>
 
@@ -514,10 +530,10 @@
             <div class="section-title"><i class="fas fa-ambulance"></i> <span class="title-text">هسته‌های امداد</span></div>
             <div class="section-desc">🚑 در بحران‌های طبیعی و اجتماعی داوطلب شوید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="showForm('امداد سیل', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="showForm('امداد زلزله', true)">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="showForm('امداد جنگ', false)">اطلاعات</button></div>
-                <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="showForm('کمک‌های اولیه', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="openRegisterForm('امداد سیل')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="openRegisterForm('امداد زلزله')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="openRegisterForm('کمک‌های اولیه')">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -551,31 +567,11 @@
         <div class="section" id="stats-section">
             <div class="section-title"><i class="fas fa-chart-bar"></i> <span class="title-text">آمار مراجعات</span></div>
             <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-icon">👤</span>
-                    <span class="stat-number" id="statGuest">0</span>
-                    <span class="stat-label">میهمان</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">👥</span>
-                    <span class="stat-number" id="statMember">0</span>
-                    <span class="stat-label">عضو</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">📅</span>
-                    <span class="stat-number" id="statToday">0</span>
-                    <span class="stat-label">امروز</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">📆</span>
-                    <span class="stat-number" id="statYesterday">0</span>
-                    <span class="stat-label">دیروز</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">📊</span>
-                    <span class="stat-number" id="statTotal">0</span>
-                    <span class="stat-label">کل مراجعات</span>
-                </div>
+                <div class="stat-card"><span class="stat-icon">👤</span><span class="stat-number" id="statGuest">0</span><span class="stat-label">میهمان</span></div>
+                <div class="stat-card"><span class="stat-icon">👥</span><span class="stat-number" id="statMember">0</span><span class="stat-label">عضو</span></div>
+                <div class="stat-card"><span class="stat-icon">📅</span><span class="stat-number" id="statToday">0</span><span class="stat-label">امروز</span></div>
+                <div class="stat-card"><span class="stat-icon">📆</span><span class="stat-number" id="statYesterday">0</span><span class="stat-label">دیروز</span></div>
+                <div class="stat-card"><span class="stat-icon">📊</span><span class="stat-number" id="statTotal">0</span><span class="stat-label">کل مراجعات</span></div>
             </div>
         </div>
 
@@ -583,13 +579,11 @@
         <div class="section" id="admin-panel">
             <div class="section-title"><i class="fas fa-lock"></i> <span class="title-text">داشبورد مدیریت</span></div>
             <div class="section-desc">🔐 ورود به پنل مدیریت برای مشاهده آمار کامل و خروجی‌گیری</div>
-            
             <div class="admin-login">
                 <input type="password" id="adminPassword" placeholder="رمز عبور مدیریت را وارد کنید..." style="flex:1;min-width:150px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:12px;">
                 <button onclick="adminLogin()" style="padding:8px 20px;background:#e17055;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;">🔑 ورود</button>
                 <button onclick="adminLogout()" style="padding:8px 20px;background:#7f8c8d;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;">🚪 خروج</button>
             </div>
-            
             <div class="admin-panel-content" id="adminContent">
                 <h4 style="color:#e17055;margin-bottom:10px;">📊 آمار کامل سیستم</h4>
                 <div class="admin-stats-grid" id="adminStatsGrid">
@@ -606,14 +600,12 @@
                     <div class="admin-stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value" id="adminRegistrations">0</span></div>
                     <div class="admin-stat-item"><span class="label">💬 پیام‌های ارسالی</span><span class="value" id="adminMessages">0</span></div>
                 </div>
-                
                 <div class="admin-actions">
                     <button class="btn-email" onclick="sendStatsEmail()"><i class="fas fa-envelope"></i> ارسال ایمیل</button>
                     <button class="btn-print" onclick="printStats()"><i class="fas fa-print"></i> پرینت</button>
                     <button class="btn-export" onclick="exportStats()"><i class="fas fa-download"></i> خروجی CSV</button>
                     <button class="btn-export" onclick="exportStatsJSON()" style="background:#fd79a8;color:#fff;"><i class="fas fa-file-code"></i> خروجی JSON</button>
                 </div>
-                
                 <div style="margin-top:10px;padding:10px;background:rgba(255,255,255,0.4);border-radius:8px;font-size:11px;color:#7f8c8d;">
                     <i class="fas fa-info-circle"></i> آخرین به‌روزرسانی: <span id="adminLastUpdate">همین لحظه</span>
                 </div>
@@ -638,13 +630,11 @@
             <div class="designer">غلامرضا رضائی</div>
             <div class="role">طراح و توسعه‌دهنده سکوی همراه هوشمند</div>
             <div class="posters">
-    <img src="images/english.png" alt="پوستر انگلیسی" onerror="this.style.display='none'">
-    <img src="images/poster 1.png" alt="پوستر اول" onerror="this.style.display='none'">
-    <img src="images/پوستر نهایی.png" alt="پوستر نهایی" onerror="this.style.display='none'">
-</div>
-            <div class="web-link">
-                🌐 <a href="http://www.kanoonbonyad.ir" target="_blank">www.kanoonbonyad.ir</a>
+                <img src="images/english.png" alt="پوستر انگلیسی" onerror="this.style.display='none'">
+                <img src="images/poster 1.png" alt="پوستر اول" onerror="this.style.display='none'">
+                <img src="images/پوستر نهایی.png" alt="پوستر نهایی" onerror="this.style.display='none'">
             </div>
+            <div class="web-link">🌐 <a href="http://www.kanoonbonyad.ir" target="_blank">www.kanoonbonyad.ir</a></div>
             <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
         </div>
 
@@ -656,6 +646,98 @@
         <button id="scrollTop" title="بالا"><i class="fas fa-arrow-up"></i><span class="tooltip">بالا</span></button>
         <button id="scrollBottom" title="پایین"><i class="fas fa-arrow-down"></i><span class="tooltip">پایین</span></button>
         <button id="fontSizeBtn" title="فونت"><i class="fas fa-font"></i><span class="tooltip">فونت</span></button>
+    </div>
+
+    <!-- ============================================================
+         مودال فرم ثبت‌نام جامع
+         ============================================================ -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>📝 فرم ثبت‌نام</h2>
+                <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
+            </div>
+            <p class="modal-desc" id="registerTitle">ثبت‌نام در تور زیارتی</p>
+            <form id="registerForm" onsubmit="submitRegisterForm(event)">
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">نام *</label>
+                    <input type="text" id="regFirstName" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">نام‌خانوادگی *</label>
+                    <input type="text" id="regLastName" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">کد ملی *</label>
+                    <input type="text" id="regNationalCode" class="modal-input" required pattern="[0-9]{10}" title="لطفاً ۱۰ رقم وارد کنید">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">شماره تماس *</label>
+                    <input type="tel" id="regPhone" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">آدرس ایمیل *</label>
+                    <input type="email" id="regEmail" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">آدرس شهر *</label>
+                    <input type="text" id="regCity" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">آدرس منزل *</label>
+                    <textarea id="regAddress" class="modal-input" rows="2" required></textarea>
+                </div>
+                <input type="hidden" id="regType" value="">
+                <button type="submit" class="modal-submit modal-submit-register">✅ ثبت‌نام</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         مودال فرم شرکت در پویش
+         ============================================================ -->
+    <div class="modal-overlay" id="campaignModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>🙋 شرکت در پویش</h2>
+                <button class="modal-close" onclick="closeModal('campaignModal')">✕</button>
+            </div>
+            <p class="modal-desc" id="campaignTitle">شرکت در پویش همیار محیط زیست</p>
+            <form id="campaignForm" onsubmit="submitCampaignForm(event)">
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">نام *</label>
+                    <input type="text" id="campFirstName" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">نام‌خانوادگی *</label>
+                    <input type="text" id="campLastName" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">کد ملی *</label>
+                    <input type="text" id="campNationalCode" class="modal-input" required pattern="[0-9]{10}" title="لطفاً ۱۰ رقم وارد کنید">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">شماره تماس *</label>
+                    <input type="tel" id="campPhone" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">آدرس ایمیل *</label>
+                    <input type="email" id="campEmail" class="modal-input" required>
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label class="modal-label">آدرس شهر *</label>
+                    <input type="text" id="campCity" class="modal-input" required>
+                </div>
+                <div class="modal-agree-box">
+                    <label>
+                        <input type="checkbox" id="campAgree" required>
+                        <span>✅ با مشارکت آزاد در این پویش موافقم و می‌پذیرم که اطلاعات من برای هماهنگی‌های بعدی استفاده شود.</span>
+                    </label>
+                </div>
+                <input type="hidden" id="campType" value="">
+                <button type="submit" class="modal-submit modal-submit-campaign">✅ ثبت مشارکت</button>
+            </form>
+        </div>
     </div>
 
     <script>
@@ -772,24 +854,10 @@
             renderTvPlaylist();
         }
 
-        function playTv() { 
-            if (tvPlayer.src) {
-                tvPlayer.play(); 
-            } else {
-                loadTvTrack(0);
-            }
-        }
+        function playTv() { if (tvPlayer.src) { tvPlayer.play(); } else { loadTvTrack(0); } }
         function pauseTv() { tvPlayer.pause(); }
-        function nextTv() { 
-            if (APP_DATA.tv.videos.length === 0) return;
-            const next = (tvIndex + 1) % APP_DATA.tv.videos.length; 
-            loadTvTrack(next); 
-        }
-        function prevTv() { 
-            if (APP_DATA.tv.videos.length === 0) return;
-            const prev = (tvIndex - 1 + APP_DATA.tv.videos.length) % APP_DATA.tv.videos.length; 
-            loadTvTrack(prev); 
-        }
+        function nextTv() { if (APP_DATA.tv.videos.length === 0) return; const next = (tvIndex + 1) % APP_DATA.tv.videos.length; loadTvTrack(next); }
+        function prevTv() { if (APP_DATA.tv.videos.length === 0) return; const prev = (tvIndex - 1 + APP_DATA.tv.videos.length) % APP_DATA.tv.videos.length; loadTvTrack(prev); }
 
         function sendTvMessage(type) {
             const input = document.getElementById('commentTv');
@@ -818,10 +886,7 @@
         function addMemory() {
             const title = document.getElementById('memoryTitle').value.trim();
             const desc = document.getElementById('memoryDesc').value.trim();
-            if (!title || !desc) {
-                alert('لطفاً عنوان و توضیحات را وارد کنید.');
-                return;
-            }
+            if (!title || !desc) { alert('لطفاً عنوان و توضیحات را وارد کنید.'); return; }
             const list = document.getElementById('memoryList');
             const div = document.createElement('div');
             div.className = 'knowledge-item';
@@ -864,75 +929,132 @@
         }
 
         // ============================================================
-        // نمایش فرم با دو نوع رفتار
-        // needForm = true: نمایش فرم کامل (نام، نام‌خانوادگی، تلفن، ایمیل)
-        // needForm = false: فقط ایمیل + کد رهگیری
+        // فرم ثبت‌نام
         // ============================================================
-        function showForm(type, needForm) {
-            const code = 'FRM-' + Date.now().toString().slice(-6);
-            
-            const messages = {
+        function openRegisterForm(type) {
+            document.getElementById('regType').value = type;
+            const titles = {
                 'تور زیارتی': 'ثبت‌نام تور زیارتی (مشهد، کربلا، نجف)',
                 'تور تفریحی': 'ثبت‌نام تور تفریحی (بازدید از مناطق گردشگری)',
                 'امکانات رفاهی': 'ثبت‌نام استفاده از امکانات رفاهی (استخر، ورزشی، اقامتگاه)',
                 'گردشگری سلامت': 'ثبت‌نام گردشگری سلامت (سفرهای درمانی به آب‌های گرم)',
-                'صندوق بازنشستگی': 'استعلام تسهیلات صندوق بازنشستگی',
                 'مربی': 'ثبت‌نام به عنوان مربی (آموزش به نسل جوان)',
                 'مشاور': 'ثبت‌نام به عنوان مشاور (مشاوره تخصصی)',
                 'ناظر': 'ثبت‌نام به عنوان ناظر (نظارت بر فرآیندها)',
                 'پژوهشگر': 'ثبت‌نام به عنوان پژوهشگر (تحلیل داده‌ها)',
-                'مطالبه‌گری حقوقی': 'شرکت در پویش مطالبه‌گری حقوقی (پیگیری مطالبات معوقه)',
-                'همیار محیط زیست': 'شرکت در پویش همیار محیط زیست (کاشت درخت، حفظ آب)',
-                'همیار سلامت': 'شرکت در پویش همیار سلامت (کمک به بیماران)',
-                'همیار آموزش': 'شرکت در پویش همیار آموزش (آموزش به کودکان محروم)',
                 'کارآفرینی': 'ثبت‌نام در کارآفرینی پیش‌کسوتان (اتصال به بازار کار)',
                 'صندوق قرض‌الحسنه': 'ثبت‌نام در صندوق قرض‌الحسنه (کمک مالی به نیازمندان)',
                 'همیار حقوقی': 'ثبت‌نام به عنوان همیار حقوقی (کمک حقوقی به پیش‌کسوتان)',
                 'همیار روانشناختی': 'ثبت‌نام به عنوان همیار روانشناختی (مشاوره روانی)',
                 'همیار محلی': 'ثبت‌نام به عنوان همیار محلی (تشکیل گروه‌های محلی)',
-                'بیمه تکمیلی درمان': 'مشاهده و تمدید بیمه تکمیلی درمان (پوشش‌های درمانی)',
-                'بیمه خودرو': 'استعلام و تمدید بیمه خودرو (پوشش‌های خودرو)',
-                'بیمه عمر و حوادث': 'مشاهده اطلاعات بیمه عمر و حوادث (پوشش‌های عمری)',
-                'بیمه منزل': 'مشاهده پوشش‌های بیمه منزل (آتش‌سوزی و زلزله)',
                 'تعاونی مسکن': 'دریافت اطلاعات تعاونی مسکن (ثبت‌نام و اطلاع‌رسانی)',
-                'ارزان‌ترین‌ها': 'مشاهده لیست ارزان‌ترین تأمین‌کنندگان (کالاهای اساسی)',
                 'امداد سیل': 'ثبت‌نام در گروه امداد سیل (واکنش به بحران سیل)',
                 'امداد زلزله': 'ثبت‌نام در گروه امداد زلزله (تیم‌های واکنش سریع)',
-                'امداد جنگ': 'دریافت اطلاعات امداد جنگ (هماهنگی در شرایط بحرانی)',
-                'کمک‌های اولیه': 'ثبت‌نام در دوره‌های کمک‌های اولیه (آموزش امداد)'
+                'کمک‌های اولیه': 'ثبت‌نام در دوره‌های کمک‌های اولیه (آموزش امداد)',
+                'همیار سلامت': 'ثبت‌نام به عنوان همیار سلامت (مشاوره سلامت)'
             };
+            document.getElementById('registerTitle').textContent = titles[type] || `ثبت‌نام در "${type}"`;
+            document.getElementById('registerModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-            const msg = messages[type] || `ثبت‌نام در "${type}"`;
+        function submitRegisterForm(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('regFirstName').value.trim();
+            const lastName = document.getElementById('regLastName').value.trim();
+            const nationalCode = document.getElementById('regNationalCode').value.trim();
+            const phone = document.getElementById('regPhone').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const city = document.getElementById('regCity').value.trim();
+            const address = document.getElementById('regAddress').value.trim();
+            const type = document.getElementById('regType').value;
+            const code = 'FRM-' + Date.now().toString().slice(-6);
 
-            if (needForm) {
-                // ===== فرم کامل با نام، نام‌خانوادگی، تلفن، ایمیل =====
-                const firstName = prompt(`برای ${msg}، نام خود را وارد کنید:`);
-                if (!firstName) { alert('❌ لطفاً نام خود را وارد کنید.'); return; }
-                
-                const lastName = prompt(`برای ${msg}، نام‌خانوادگی خود را وارد کنید:`);
-                if (!lastName) { alert('❌ لطفاً نام‌خانوادگی خود را وارد کنید.'); return; }
-                
-                const phone = prompt(`برای ${msg}، شماره تلفن خود را وارد کنید:`);
-                if (!phone) { alert('❌ لطفاً شماره تلفن خود را وارد کنید.'); return; }
-                
-                const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
-                if (!userEmail || !userEmail.includes('@')) {
-                    alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
-                    return;
-                }
-                
-                alert(`✅ ثبت‌نام شما در "${type}" با موفقیت انجام شد.\n\n📋 اطلاعات ثبت‌شده:\nنام: ${firstName}\nنام‌خانوادگی: ${lastName}\nتلفن: ${phone}\nایمیل: ${userEmail}\n\n🔑 کد رهگیری: ${code}\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
-                
-            } else {
-                // ===== فقط ایمیل + کد رهگیری =====
-                const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
-                if (!userEmail || !userEmail.includes('@')) {
-                    alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
-                    return;
-                }
-                
-                alert(`✅ درخواست شما در "${type}" با موفقیت ثبت شد.\n\n🔑 کد رهگیری: ${code}\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
-            }
+            const emailBody = `📋 فرم ثبت‌نام کانون پیشکسوتان
+═══════════════════════════
+🔹 نوع درخواست: ${type}
+🔹 کد رهگیری: ${code}
+📌 اطلاعات شخصی:
+نام: ${firstName}
+نام‌خانوادگی: ${lastName}
+کد ملی: ${nationalCode}
+شماره تماس: ${phone}
+ایمیل: ${email}
+شهر: ${city}
+آدرس: ${address}
+═══════════════════════════
+تاریخ ثبت: ${new Date().toLocaleDateString('fa-IR')}
+کانون پیشکسوتان بنیاد شهید`;
+
+            alert(`✅ ثبت‌نام شما با موفقیت انجام شد!\n\n🔑 کد رهگیری: ${code}\n\n📋 اطلاعات ثبت‌شده:\nنام: ${firstName} ${lastName}\nکد ملی: ${nationalCode}\nتلفن: ${phone}\nایمیل: ${email}\nشهر: ${city}\n\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${email} ارسال خواهد شد.`);
+
+            const subject = encodeURIComponent(`📋 فرم ثبت‌نام - ${type}`);
+            const encodedBody = encodeURIComponent(emailBody);
+            window.open(`mailto:info@kanoonbonyad.ir?subject=${subject}&body=${encodedBody}`, '_blank');
+
+            closeModal('registerModal');
+            document.getElementById('registerForm').reset();
+        }
+
+        // ============================================================
+        // فرم شرکت در پویش
+        // ============================================================
+        function openCampaignForm(type) {
+            document.getElementById('campType').value = type;
+            const titles = {
+                'مطالبه‌گری حقوقی': 'شرکت در پویش مطالبه‌گری حقوقی (پیگیری مطالبات معوقه)',
+                'همیار محیط زیست': 'شرکت در پویش همیار محیط زیست (کاشت درخت، حفظ آب)',
+                'همیار سلامت': 'شرکت در پویش همیار سلامت (کمک به بیماران)',
+                'همیار آموزش': 'شرکت در پویش همیار آموزش (آموزش به کودکان محروم)'
+            };
+            document.getElementById('campaignTitle').textContent = titles[type] || `شرکت در پویش "${type}"`;
+            document.getElementById('campaignModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function submitCampaignForm(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('campFirstName').value.trim();
+            const lastName = document.getElementById('campLastName').value.trim();
+            const nationalCode = document.getElementById('campNationalCode').value.trim();
+            const phone = document.getElementById('campPhone').value.trim();
+            const email = document.getElementById('campEmail').value.trim();
+            const city = document.getElementById('campCity').value.trim();
+            const type = document.getElementById('campType').value;
+            const code = 'CPN-' + Date.now().toString().slice(-6);
+
+            const emailBody = `📋 فرم شرکت در پویش - کانون پیشکسوتان
+═══════════════════════════
+🔹 نام پویش: ${type}
+🔹 کد رهگیری: ${code}
+📌 اطلاعات شرکت‌کننده:
+نام: ${firstName}
+نام‌خانوادگی: ${lastName}
+کد ملی: ${nationalCode}
+شماره تماس: ${phone}
+ایمیل: ${email}
+شهر: ${city}
+✅ تأیید مشارکت آزاد: بله
+═══════════════════════════
+تاریخ ثبت: ${new Date().toLocaleDateString('fa-IR')}
+کانون پیشکسوتان بنیاد شهید`;
+
+            alert(`✅ ثبت مشارکت شما با موفقیت انجام شد!\n\n🔑 کد رهگیری: ${code}\n\n📋 اطلاعات ثبت‌شده:\nنام: ${firstName} ${lastName}\nکد ملی: ${nationalCode}\nتلفن: ${phone}\nایمیل: ${email}\nشهر: ${city}\n✅ تأیید مشارکت آزاد: بله\n\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${email} ارسال خواهد شد.`);
+
+            const subject = encodeURIComponent(`📋 فرم شرکت در پویش - ${type}`);
+            const encodedBody = encodeURIComponent(emailBody);
+            window.open(`mailto:info@kanoonbonyad.ir?subject=${subject}&body=${encodedBody}`, '_blank');
+
+            closeModal('campaignModal');
+            document.getElementById('campaignForm').reset();
+        }
+
+        // ============================================================
+        // بستن مودال
+        // ============================================================
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         // ============================================================
@@ -959,18 +1081,11 @@
         }
 
         function updateAdminStats() {
-            const guest = document.getElementById('statGuest').textContent;
-            const member = document.getElementById('statMember').textContent;
-            const today = document.getElementById('statToday').textContent;
-            const yesterday = document.getElementById('statYesterday').textContent;
-            const total = document.getElementById('statTotal').textContent;
-            
-            document.getElementById('adminGuest').textContent = guest;
-            document.getElementById('adminMember').textContent = member;
-            document.getElementById('adminToday').textContent = today;
-            document.getElementById('adminYesterday').textContent = yesterday;
-            document.getElementById('adminTotal').textContent = total;
-            
+            document.getElementById('adminGuest').textContent = document.getElementById('statGuest').textContent;
+            document.getElementById('adminMember').textContent = document.getElementById('statMember').textContent;
+            document.getElementById('adminToday').textContent = document.getElementById('statToday').textContent;
+            document.getElementById('adminYesterday').textContent = document.getElementById('statYesterday').textContent;
+            document.getElementById('adminTotal').textContent = document.getElementById('statTotal').textContent;
             document.getElementById('adminRadio').textContent = '0';
             document.getElementById('adminTv').textContent = '0';
             document.getElementById('adminMemory').textContent = '0';
@@ -978,7 +1093,6 @@
             document.getElementById('adminAnnounce').textContent = '0';
             document.getElementById('adminRegistrations').textContent = '0';
             document.getElementById('adminMessages').textContent = '0';
-            
             document.getElementById('adminLastUpdate').textContent = new Date().toLocaleString('fa-IR');
         }
 
@@ -1026,33 +1140,26 @@
             body += `💬 پیام‌های ارسال‌شده: ${data.پیام‌های_ارسال‌شده}\n`;
             body += '\n═══════════════════════════\n';
             body += 'کانون پیشکسوتان بنیاد شهید';
-            
             const subject = encodeURIComponent('📊 گزارش آمار کانون پیشکسوتان');
             const encodedBody = encodeURIComponent(body);
             window.location.href = `mailto:info@kanoonbonyad.ir?subject=${subject}&body=${encodedBody}`;
-            
             alert('📧 ایمیل با اطلاعات آماری باز شد. لطفاً ارسال را تأیید کنید.');
         }
 
         function printStats() {
             const data = getStatsData();
             let html = `
-                <html>
-                <head>
-                    <style>
-                        body { font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl; padding: 30px; }
-                        h1 { color: #2d1b4e; border-bottom: 3px solid #6C5CE7; padding-bottom: 10px; }
-                        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-                        .stat-item { background: #f5f0ff; padding: 10px 15px; border-radius: 8px; border-right: 4px solid #6C5CE7; }
-                        .stat-item .label { font-weight: 700; color: #2d1b4e; }
-                        .stat-item .value { float: left; font-weight: 900; color: #6C5CE7; }
-                        .footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #eee; text-align: center; font-size: 12px; color: #999; }
-                    </style>
-                </head>
-                <body>
+                <html><head><style>
+                    body { font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl; padding: 30px; }
+                    h1 { color: #2d1b4e; border-bottom: 3px solid #6C5CE7; padding-bottom: 10px; }
+                    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+                    .stat-item { background: #f5f0ff; padding: 10px 15px; border-radius: 8px; border-right: 4px solid #6C5CE7; }
+                    .stat-item .label { font-weight: 700; color: #2d1b4e; }
+                    .stat-item .value { float: left; font-weight: 900; color: #6C5CE7; }
+                    .footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #eee; text-align: center; font-size: 12px; color: #999; }
+                </style></head><body>
                     <h1>📊 گزارش آمار کانون پیشکسوتان</h1>
                     <p>📅 تاریخ: ${data.تاریخ} | 🕐 ساعت: ${data.ساعت}</p>
-                    
                     <h3>📈 آمار کلی</h3>
                     <div class="stat-grid">
                         <div class="stat-item"><span class="label">👤 میهمان</span><span class="value">${data.میهمان}</span></div>
@@ -1061,7 +1168,6 @@
                         <div class="stat-item"><span class="label">📆 بازدید دیروز</span><span class="value">${data.بازدید_دیروز}</span></div>
                         <div class="stat-item"><span class="label">📊 کل بازدیدها</span><span class="value">${data.کل_بازدیدها}</span></div>
                     </div>
-                    
                     <h3>📊 آمار بخش‌ها</h3>
                     <div class="stat-grid">
                         <div class="stat-item"><span class="label">📻 رادیو</span><span class="value">${data.بازدید_رادیو}</span></div>
@@ -1070,20 +1176,13 @@
                         <div class="stat-item"><span class="label">🤝 مشارکت</span><span class="value">${data.بازدید_مشارکت}</span></div>
                         <div class="stat-item"><span class="label">📢 اعلانات</span><span class="value">${data.بازدید_اعلانات}</span></div>
                     </div>
-                    
                     <h3>📝 آمار عملیاتی</h3>
                     <div class="stat-grid">
                         <div class="stat-item"><span class="label">📝 تعداد ثبت‌نام‌ها</span><span class="value">${data.تعداد_ثبت‌نام‌ها}</span></div>
                         <div class="stat-item"><span class="label">💬 پیام‌های ارسال‌شده</span><span class="value">${data.پیام‌های_ارسال‌شده}</span></div>
                     </div>
-                    
-                    <div class="footer">
-                        کانون پیشکسوتان بنیاد شهید<br>
-                        www.kanoonbonyad.ir
-                    </div>
-                </body>
-                </html>`;
-            
+                    <div class="footer">کانون پیشکسوتان بنیاد شهید<br>www.kanoonbonyad.ir</div>
+                </body></html>`;
             const win = window.open('', '_blank');
             win.document.write(html);
             win.document.close();
@@ -1093,9 +1192,7 @@
         function exportStats() {
             const data = getStatsData();
             let csv = 'عنوان,مقدار\n';
-            for (let key in data) {
-                csv += `${key},${data[key]}\n`;
-            }
+            for (let key in data) { csv += `${key},${data[key]}\n`; }
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
@@ -1152,10 +1249,7 @@
         renderRadioPlaylist();
         renderTvPlaylist();
         loadRadioTrack(0);
-        if (APP_DATA.tv.videos.length > 0) {
-            loadTvTrack(0);
-        }
-
+        if (APP_DATA.tv.videos.length > 0) { loadTvTrack(0); }
         console.log('✅ رادیو تلویزیون هوشمند کانون پیشکسوتان راه‌اندازی شد.');
     </script>
 
