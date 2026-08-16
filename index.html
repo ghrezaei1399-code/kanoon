@@ -15,6 +15,7 @@
         .header::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(253,203,110,0.04) 0%,transparent 70%);animation:glowPulse 8s ease-in-out infinite;pointer-events:none}
         @keyframes glowPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10%,10%) scale(1.1)}}
         .header .logo-area{display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1;min-width:60px}
+        .header .logo-area video{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover}
         .header .title-area{text-align:center;flex:1;position:relative;z-index:1}
         .header .title-area h1{font-size:24px;font-weight:900;letter-spacing:-0.5px;background:linear-gradient(135deg,#fff,#fdcb6e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .header .title-area h1 span{background:linear-gradient(135deg,#fdcb6e,#a29bfe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -249,12 +250,17 @@
         #scrollBottom{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
         #fontSizeBtn{background:linear-gradient(135deg,#4a90d9,#74b9ff);color:#fff}
         
-        .footer-mini{background:#39FF14;padding:12px;border-radius:14px;margin-top:15px;text-align:center;color:#1a1a2e;border:2px solid #1a1a2e;max-width:380px;margin-left:auto;margin-right:auto;transition:all 0.3s ease}
+        .footer-mini{background:#39FF14;padding:12px;border-radius:14px;margin-top:15px;text-align:center;color:#1a1a2e;border:2px solid #1a1a2e;max-width:420px;margin-left:auto;margin-right:auto;transition:all 0.3s ease}
         .footer-mini:hover{transform:scale(1.02)}
         .footer-mini strong{font-size:14px}
         .footer-mini .designer{font-size:16px;font-weight:700;margin:2px 0}
         .footer-mini .role{font-size:11px;opacity:0.7}
+        .footer-mini .posters{display:flex;gap:8px;justify-content:center;margin:8px 0;flex-wrap:wrap}
+        .footer-mini .posters img{width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover}
         .footer-mini .copyright{font-size:9px;border-top:1px solid rgba(26,26,46,0.08);padding-top:4px;margin-top:4px}
+        .footer-mini .web-link{font-size:11px;margin-top:4px;font-weight:700;color:#1a1a2e}
+        .footer-mini .web-link a{color:#1a1a2e;text-decoration:none}
+        .footer-mini .web-link a:hover{text-decoration:underline}
         
         body.dark-mode{background:#0f0c29;color:#e0e0e0}
         body.dark-mode .container{background:#1a1a2e}
@@ -288,6 +294,8 @@
         body.dark-mode .playlist-item.active{background:linear-gradient(135deg,#6C5CE7,#a29bfe);color:#fff}
         body.dark-mode .floating-toolbar button{background:#1a1a2e;color:#e0e0e0}
         body.dark-mode .footer-mini{background:#00b894;color:#fff;border-color:#00b894}
+        body.dark-mode .footer-mini .posters img{border-color:#fff}
+        body.dark-mode .footer-mini .web-link a{color:#fff}
         body.dark-mode .card .btn{color:#fff}
         body.dark-mode .social-item .btn{color:#fff}
         body.dark-mode .section-desc{color:#b0b0b0}
@@ -304,7 +312,7 @@
         
         @media(max-width:992px){.container{padding:16px}}
         @media(max-width:768px){body{padding:10px}.container{padding:12px;border-radius:20px}.header{flex-direction:column;text-align:center;padding:16px 14px}.header .title-area h1{font-size:20px}.header .date-area{width:100%;text-align:center;padding:6px 10px}.menu{padding:8px 12px;gap:4px;border-radius:40px}.menu a{padding:4px 10px;font-size:10px}.section{padding:14px;border-radius:16px}.section-title{font-size:16px}.card-grid,.social-grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px}.card .icon{font-size:26px}.floating-toolbar{bottom:15px;right:15px}.floating-toolbar button{width:38px;height:38px;font-size:0.8rem}}
-        @media(max-width:480px){body{padding:6px}.container{padding:8px;border-radius:16px}.header .title-area h1{font-size:16px}.header .logo-area .logo-placeholder{width:38px;height:38px;font-size:16px}.menu a{padding:3px 7px;font-size:9px}.section{padding:10px;border-radius:14px;margin-bottom:14px}.section-title{font-size:14px}.card-grid,.social-grid{grid-template-columns:1fr;gap:8px}.card{padding:12px}.card .icon{font-size:22px}.controls button{padding:4px 10px;font-size:10px}.floating-toolbar{bottom:12px;right:12px}.floating-toolbar button{width:34px;height:34px;font-size:0.7rem}}
+        @media(max-width:480px){body{padding:6px}.container{padding:8px;border-radius:16px}.header .title-area h1{font-size:16px}.header .logo-area video{width:70px;height:70px}.menu a{padding:3px 7px;font-size:9px}.section{padding:10px;border-radius:14px;margin-bottom:14px}.section-title{font-size:14px}.card-grid,.social-grid{grid-template-columns:1fr;gap:8px}.card{padding:12px}.card .icon{font-size:22px}.controls button{padding:4px 10px;font-size:10px}.floating-toolbar{bottom:12px;right:12px}.floating-toolbar button{width:34px;height:34px;font-size:0.7rem}}
     </style>
 </head>
 <body>
@@ -314,7 +322,7 @@
         <!-- ===== HEADER ===== -->
         <header class="header">
             <div class="logo-area">
-                <video autoplay muted loop playsinline style="width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover;">
+                <video autoplay muted loop playsinline>
                     <source src="images/logo.mp4" type="video/mp4">
                 </video>
             </div>
@@ -618,7 +626,7 @@
                 <div class="contact-row"><span class="label">📍 آدرس</span><span class="value">تهران - خ طالقانی - ساختمان قدیم بنیاد</span></div>
                 <div class="contact-row"><span class="label">📞 تلفن</span><span class="value">66415529 - 66415669</span></div>
                 <div class="contact-row"><span class="label">📧 ایمیل</span><a href="mailto:info@kanoonbonyad.ir" class="value">info@kanoonbonyad.ir</a></div>
-                <div class="contact-row"><span class="label">🌐 وب</span><a href="https://www.kanoonbonyad.ir" target="_blank" class="value">www.kanoonbonyad.ir</a></div>
+                <div class="contact-row"><span class="label">🌐 وب</span><a href="http://www.kanoonbonyad.ir" target="_blank" class="value">www.kanoonbonyad.ir</a></div>
             </div>
         </div>
 
@@ -627,9 +635,12 @@
             <strong>طراحی و توسعه</strong>
             <div class="designer">غلامرضا رضائی</div>
             <div class="role">طراح و توسعه‌دهنده سکوی همراه هوشمند</div>
-            <div style="display:flex;gap:8px;justify-content:center;margin:8px 0;flex-wrap:wrap;">
-                <img src="images/english.jpg" alt="پوستر انگلیسی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
-                <img src="images/poster.jpg" alt="پوستر نهایی" style="width:80px;height:100px;border-radius:8px;border:2px solid #1a1a2e;object-fit:cover;">
+            <div class="posters">
+                <img src="images/english.jpg" alt="پوستر انگلیسی" onerror="this.style.display='none'">
+                <img src="images/poster.jpg" alt="پوستر نهایی" onerror="this.style.display='none'">
+            </div>
+            <div class="web-link">
+                🌐 <a href="http://www.kanoonbonyad.ir" target="_blank">www.kanoonbonyad.ir</a>
             </div>
             <div class="copyright">© تمامی حقوق این اثر متعلق به غلامرضا رضائی می‌باشد.</div>
         </div>
@@ -850,7 +861,7 @@
         }
 
         // ============================================================
-        // نمایش فرم با پیام اختصاصی
+        // نمایش فرم با پیام اختصاصی - لینک همه ماژول‌ها
         // ============================================================
         function showForm(type) {
             const code = 'FRM-' + Date.now().toString().slice(-6);
@@ -1008,7 +1019,6 @@
                         .stat-item .label { font-weight: 700; color: #2d1b4e; }
                         .stat-item .value { float: left; font-weight: 900; color: #6C5CE7; }
                         .footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #eee; text-align: center; font-size: 12px; color: #999; }
-                        .title { font-size: 18px; color: #e17055; }
                     </style>
                 </head>
                 <body>
