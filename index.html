@@ -15,7 +15,7 @@
         .header::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(253,203,110,0.04) 0%,transparent 70%);animation:glowPulse 8s ease-in-out infinite;pointer-events:none}
         @keyframes glowPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10%,10%) scale(1.1)}}
         .header .logo-area{display:flex;align-items:center;gap:10px;flex-shrink:0;position:relative;z-index:1;min-width:60px}
-        .header .logo-area video{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover}
+        .header .logo-area video{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);object-fit:cover;background:#2d1b4e}
         .header .title-area{text-align:center;flex:1;position:relative;z-index:1}
         .header .title-area h1{font-size:24px;font-weight:900;letter-spacing:-0.5px;background:linear-gradient(135deg,#fff,#fdcb6e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .header .title-area h1 span{background:linear-gradient(135deg,#fdcb6e,#a29bfe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -324,6 +324,7 @@
             <div class="logo-area">
                 <video autoplay muted loop playsinline>
                     <source src="images/logo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
             </div>
             <div class="title-area">
@@ -437,12 +438,12 @@
             <div class="section-title"><i class="fas fa-handshake"></i> <span class="title-text">مشارکت و همکاری</span></div>
             <div class="section-desc">🏛️ همکاری با بنیاد شهید، صندوق بازنشستگی و سایر سازمان‌ها</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🕌</span><h4>تورهای زیارتی</h4><p>اعزام به مشهد، کربلا، نجف</p><button class="btn" onclick="showForm('تور زیارتی')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="showForm('تور تفریحی')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="showForm('امکانات رفاهی')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="showForm('گردشگری سلامت')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🕌</span><h4>تورهای زیارتی</h4><p>اعزام به مشهد، کربلا، نجف</p><button class="btn" onclick="showForm('تور زیارتی', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏞️</span><h4>تورهای تفریحی</h4><p>بازدید از مناطق گردشگری</p><button class="btn" onclick="showForm('تور تفریحی', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏊</span><h4>امکانات رفاهی</h4><p>استخر، ورزشی، اقامتگاه</p><button class="btn" onclick="showForm('امکانات رفاهی', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌿</span><h4>گردشگری سلامت</h4><p>سفرهای درمانی به آب‌های گرم</p><button class="btn" onclick="showForm('گردشگری سلامت', true)">ثبت‌نام</button></div>
                 <div class="card"><span class="icon">🏛️</span><h4>بنیاد شهید</h4><p>اطلاع‌رسانی خدمات</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="showForm('صندوق بازنشستگی')">استعلام</button></div>
+                <div class="card"><span class="icon">🏦</span><h4>صندوق بازنشستگی</h4><p>تسهیل بیمه و حقوق</p><button class="btn" onclick="showForm('صندوق بازنشستگی', false)">استعلام</button></div>
             </div>
         </div>
 
@@ -451,10 +452,10 @@
             <div class="section-title"><i class="fas fa-user-plus"></i> <span class="title-text">داوطلبانه‌ها</span></div>
             <div class="section-desc">🙋 به عنوان مربی، مشاور، ناظر یا پژوهشگر ثبت‌نام کنید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">👨‍🏫</span><h4>مربی</h4><p>آموزش به نسل جوان</p><button class="btn" onclick="showForm('مربی')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🧑‍💼</span><h4>مشاور</h4><p>مشاوره تخصصی</p><button class="btn" onclick="showForm('مشاور')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">👁️</span><h4>ناظر</h4><p>نظارت بر فرآیندها</p><button class="btn" onclick="showForm('ناظر')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🔬</span><h4>پژوهشگر</h4><p>تحلیل داده‌ها</p><button class="btn" onclick="showForm('پژوهشگر')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">👨‍🏫</span><h4>مربی</h4><p>آموزش به نسل جوان</p><button class="btn" onclick="showForm('مربی', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🧑‍💼</span><h4>مشاور</h4><p>مشاوره تخصصی</p><button class="btn" onclick="showForm('مشاور', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">👁️</span><h4>ناظر</h4><p>نظارت بر فرآیندها</p><button class="btn" onclick="showForm('ناظر', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🔬</span><h4>پژوهشگر</h4><p>تحلیل داده‌ها</p><button class="btn" onclick="showForm('پژوهشگر', true)">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -463,10 +464,10 @@
             <div class="section-title"><i class="fas fa-flag"></i> <span class="title-text">پویش‌ها و مطالبه‌گری</span></div>
             <div class="section-desc">📢 در پویش‌های اجتماعی و حقوقی شرکت کنید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">⚖️</span><h4>مطالبه‌گری حقوقی</h4><p>پیگیری مطالبات معوقه</p><button class="btn" onclick="showForm('مطالبه‌گری حقوقی')">شرکت</button></div>
-                <div class="card"><span class="icon">🌳</span><h4>همیار محیط زیست</h4><p>کاشت درخت، حفظ آب</p><button class="btn" onclick="showForm('همیار محیط زیست')">شرکت</button></div>
-                <div class="card"><span class="icon">❤️</span><h4>همیار سلامت</h4><p>کمک به بیماران</p><button class="btn" onclick="showForm('همیار سلامت')">شرکت</button></div>
-                <div class="card"><span class="icon">📚</span><h4>همیار آموزش</h4><p>آموزش به کودکان محروم</p><button class="btn" onclick="showForm('همیار آموزش')">شرکت</button></div>
+                <div class="card"><span class="icon">⚖️</span><h4>مطالبه‌گری حقوقی</h4><p>پیگیری مطالبات معوقه</p><button class="btn" onclick="showForm('مطالبه‌گری حقوقی', true)">شرکت</button></div>
+                <div class="card"><span class="icon">🌳</span><h4>همیار محیط زیست</h4><p>کاشت درخت، حفظ آب</p><button class="btn" onclick="showForm('همیار محیط زیست', true)">شرکت</button></div>
+                <div class="card"><span class="icon">❤️</span><h4>همیار سلامت</h4><p>کمک به بیماران</p><button class="btn" onclick="showForm('همیار سلامت', true)">شرکت</button></div>
+                <div class="card"><span class="icon">📚</span><h4>همیار آموزش</h4><p>آموزش به کودکان محروم</p><button class="btn" onclick="showForm('همیار آموزش', true)">شرکت</button></div>
             </div>
         </div>
 
@@ -475,12 +476,12 @@
             <div class="section-title"><i class="fas fa-hands-helping"></i> <span class="title-text">همیاری‌های اجتماعی</span></div>
             <div class="section-desc">🤝 توانمندسازی پیش‌کسوتان و کمک به همکاران نیازمند</div>
             <div class="social-grid">
-                <div class="social-item"><span class="title">کارآفرینی پیش‌کسوتان</span><span class="desc">اتصال پیش‌کسوتان دارای مهارت به بازار کار</span><button class="btn" onclick="showForm('کارآفرینی')">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">صندوق قرض‌الحسنه</span><span class="desc">کمک به پیش‌کسوتان نیازمند برای رفع مشکلات مالی</span><button class="btn" onclick="showForm('صندوق قرض‌الحسنه')">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار سلامت</span><span class="desc">مشاوره سلامت توسط پیش‌کسوتان دارای سابقه پزشکی</span><button class="btn" onclick="showForm('همیار سلامت')">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار حقوقی</span><span class="desc">کمک حقوقی به پیش‌کسوتان توسط همکاران وکیل</span><button class="btn" onclick="showForm('همیار حقوقی')">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار روانشناختی</span><span class="desc">مشاوره روانی به پیش‌کسوتان تنها و بیمار</span><button class="btn" onclick="showForm('همیار روانشناختی')">ثبت‌نام</button></div>
-                <div class="social-item"><span class="title">همیار محلی</span><span class="desc">تشکیل گروه‌های محلی برای کمک به پیش‌کسوتان نیازمند</span><button class="btn" onclick="showForm('همیار محلی')">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">کارآفرینی پیش‌کسوتان</span><span class="desc">اتصال پیش‌کسوتان دارای مهارت به بازار کار</span><button class="btn" onclick="showForm('کارآفرینی', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">صندوق قرض‌الحسنه</span><span class="desc">کمک به پیش‌کسوتان نیازمند برای رفع مشکلات مالی</span><button class="btn" onclick="showForm('صندوق قرض‌الحسنه', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار سلامت</span><span class="desc">مشاوره سلامت توسط پیش‌کسوتان دارای سابقه پزشکی</span><button class="btn" onclick="showForm('همیار سلامت', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار حقوقی</span><span class="desc">کمک حقوقی به پیش‌کسوتان توسط همکاران وکیل</span><button class="btn" onclick="showForm('همیار حقوقی', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار روانشناختی</span><span class="desc">مشاوره روانی به پیش‌کسوتان تنها و بیمار</span><button class="btn" onclick="showForm('همیار روانشناختی', true)">ثبت‌نام</button></div>
+                <div class="social-item"><span class="title">همیار محلی</span><span class="desc">تشکیل گروه‌های محلی برای کمک به پیش‌کسوتان نیازمند</span><button class="btn" onclick="showForm('همیار محلی', true)">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -489,10 +490,10 @@
             <div class="section-title"><i class="fas fa-shield-alt"></i> <span class="title-text">خدمات بیمه</span></div>
             <div class="section-desc">🛡️ مدیریت بیمه‌های تکمیلی، خودرو، عمر و منزل</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="showForm('بیمه تکمیلی درمان')">مشاهده</button></div>
-                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="showForm('بیمه خودرو')">استعلام</button></div>
-                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="showForm('بیمه عمر و حوادث')">اطلاعات</button></div>
-                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="showForm('بیمه منزل')">مشاهده</button></div>
+                <div class="card"><span class="icon">🩺</span><h4>بیمه تکمیلی درمان</h4><p>تمدید و مشاهده پوشش‌ها</p><button class="btn" onclick="showForm('بیمه تکمیلی درمان', false)">مشاهده</button></div>
+                <div class="card"><span class="icon">🚗</span><h4>بیمه خودرو</h4><p>استعلام و تمدید آنلاین</p><button class="btn" onclick="showForm('بیمه خودرو', false)">استعلام</button></div>
+                <div class="card"><span class="icon">🧓</span><h4>بیمه عمر و حوادث</h4><p>اطلاعات و پوشش‌ها</p><button class="btn" onclick="showForm('بیمه عمر و حوادث', false)">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>بیمه منزل</h4><p>پوشش‌های آتش‌سوزی و زلزله</p><button class="btn" onclick="showForm('بیمه منزل', false)">مشاهده</button></div>
             </div>
         </div>
 
@@ -501,9 +502,9 @@
             <div class="section-title"><i class="fas fa-store"></i> <span class="title-text">تعاون و فروش</span></div>
             <div class="section-desc">🏢 تعاونی مسکن، فروشگاه بنیاد و ارزان‌ترین‌ها</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="showForm('تعاونی مسکن')">اطلاعات</button></div>
+                <div class="card"><span class="icon">🏠</span><h4>تعاونی مسکن</h4><p>اطلاعات و ثبت‌نام</p><button class="btn" onclick="showForm('تعاونی مسکن', true)">اطلاعات</button></div>
                 <div class="card"><span class="icon">🛒</span><h4>فروشگاه بنیاد</h4><p>کالاهای اساسی با تخفیف</p><button class="btn" onclick="window.open('https://www.kanoonbonyad.ir','_blank')">مشاهده</button></div>
-                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="showForm('ارزان‌ترین‌ها')">مشاهده</button></div>
+                <div class="card"><span class="icon">💰</span><h4>ارزان‌ترین‌ها</h4><p>لیست ارزان‌ترین تأمین‌کنندگان</p><button class="btn" onclick="showForm('ارزان‌ترین‌ها', false)">مشاهده</button></div>
             </div>
         </div>
 
@@ -512,10 +513,10 @@
             <div class="section-title"><i class="fas fa-ambulance"></i> <span class="title-text">هسته‌های امداد</span></div>
             <div class="section-desc">🚑 در بحران‌های طبیعی و اجتماعی داوطلب شوید</div>
             <div class="card-grid">
-                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="showForm('امداد سیل')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="showForm('امداد زلزله')">ثبت‌نام</button></div>
-                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="showForm('امداد جنگ')">اطلاعات</button></div>
-                <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="showForm('کمک‌های اولیه')">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🌊</span><h4>امداد سیل</h4><p>ثبت‌نام در گروه امداد سیل</p><button class="btn" onclick="showForm('امداد سیل', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">🏚️</span><h4>امداد زلزله</h4><p>تیم‌های واکنش سریع</p><button class="btn" onclick="showForm('امداد زلزله', true)">ثبت‌نام</button></div>
+                <div class="card"><span class="icon">⚔️</span><h4>امداد جنگ</h4><p>هماهنگی در شرایط بحرانی</p><button class="btn" onclick="showForm('امداد جنگ', false)">اطلاعات</button></div>
+                <div class="card"><span class="icon">🩹</span><h4>کمک‌های اولیه</h4><p>دوره‌های آموزش امداد</p><button class="btn" onclick="showForm('کمک‌های اولیه', true)">ثبت‌نام</button></div>
             </div>
         </div>
 
@@ -861,9 +862,11 @@
         }
 
         // ============================================================
-        // نمایش فرم با پیام اختصاصی - لینک همه ماژول‌ها
+        // نمایش فرم با دو نوع رفتار
+        // needForm = true: نمایش فرم کامل (نام، نام‌خانوادگی، تلفن، ایمیل)
+        // needForm = false: فقط ایمیل + کد رهگیری
         // ============================================================
-        function showForm(type) {
+        function showForm(type, needForm) {
             const code = 'FRM-' + Date.now().toString().slice(-6);
             
             const messages = {
@@ -898,12 +901,35 @@
             };
 
             const msg = messages[type] || `ثبت‌نام در "${type}"`;
-            
-            const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
-            if (userEmail && userEmail.includes('@')) {
-                alert(`✅ ثبت‌نام شما در "${type}" با موفقیت انجام شد.\nکد رهگیری: ${code}\nوضعیت: در انتظار بررسی\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
-            } else if (userEmail) {
-                alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
+
+            if (needForm) {
+                // ===== فرم کامل با نام، نام‌خانوادگی، تلفن، ایمیل =====
+                const firstName = prompt(`برای ${msg}، نام خود را وارد کنید:`);
+                if (!firstName) { alert('❌ لطفاً نام خود را وارد کنید.'); return; }
+                
+                const lastName = prompt(`برای ${msg}، نام‌خانوادگی خود را وارد کنید:`);
+                if (!lastName) { alert('❌ لطفاً نام‌خانوادگی خود را وارد کنید.'); return; }
+                
+                const phone = prompt(`برای ${msg}، شماره تلفن خود را وارد کنید:`);
+                if (!phone) { alert('❌ لطفاً شماره تلفن خود را وارد کنید.'); return; }
+                
+                const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
+                if (!userEmail || !userEmail.includes('@')) {
+                    alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
+                    return;
+                }
+                
+                alert(`✅ ثبت‌نام شما در "${type}" با موفقیت انجام شد.\n\n📋 اطلاعات ثبت‌شده:\nنام: ${firstName}\nنام‌خانوادگی: ${lastName}\nتلفن: ${phone}\nایمیل: ${userEmail}\n\n🔑 کد رهگیری: ${code}\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
+                
+            } else {
+                // ===== فقط ایمیل + کد رهگیری =====
+                const userEmail = prompt(`برای ${msg}، ایمیل خود را وارد کنید:`);
+                if (!userEmail || !userEmail.includes('@')) {
+                    alert('❌ لطفاً یک ایمیل معتبر وارد کنید.');
+                    return;
+                }
+                
+                alert(`✅ درخواست شما در "${type}" با موفقیت ثبت شد.\n\n🔑 کد رهگیری: ${code}\n📌 وضعیت: در انتظار بررسی\n\nنتیجه به ایمیل ${userEmail} ارسال خواهد شد.`);
             }
         }
 
